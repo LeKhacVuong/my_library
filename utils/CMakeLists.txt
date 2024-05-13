@@ -3,7 +3,7 @@ project(ev-sdk-utils)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SDK_UTILS_SRC
+set(UTILS_SRC
         sm_logger.c
         sm_logger.h
         algorithms/sm_crc.c
@@ -19,5 +19,5 @@ set(SDK_UTILS_SRC
         unix/linux_serial.h
 )
 
-add_library(sdk_utils STATIC
-        ${SDK_UTILS_SRC})
+add_library(utils STATIC
+        ${UTILS_SRC})
