@@ -7,8 +7,6 @@
 
 #include "sm_host.h"
 #include "sm_crc.h"
-#include "elapsed_timer.h"
-
 
 #define SM_PROTO_START_BYTE     0xAA
 #define SM_PROTO_STOP_BYTE      0x55
@@ -185,7 +183,6 @@ int32_t sm_host_send_cmd(sm_host_t* _host, int32_t _cmd, const uint8_t* _data, i
     packet[len++] = (crc >> 8) & 0xFF;
     packet[len++] = (crc & 0xFF);
     packet[len++] = SM_PROTO_STOP_BYTE;
-
     if(_impl(_host)->m_host_send_if(packet, len, SM_HOST_TIMEOUT_IF_DEFAULT, _impl(_host)->m_arg_if) <= 0){
         return -1;
     }
@@ -294,12 +291,12 @@ int sm_host_process(sm_host_t* _host){
             uint32_t buffer_len = (WORD(host->m_packet[SM_PROTO_LENGTH_HIGH_INDEX], host->m_packet[SM_PROTO_LENGTH_LOW_INDEX]) + 3);
 
             if(buffer_len >= SM_HOST_MAX_COMMUNICATION_BUFFER_SIZE){
-                host->m_packet_index = 0;
+                host->m_buffer_index = host->m_process_index = host->m_packet_index = 0;
                 return -1;
             }
 
             if(host->m_packet_index > buffer_len){
-                host->m_packet_index = 0;
+                host->m_buffer_index = host->m_process_index = host->m_packet_index = 0;
                 return -1;
             }else if(host->m_packet_index == buffer_len){
                 if(host->m_packet[SM_PROTO_DEVICE_ADDR_INDEX] != host->m_addr){
@@ -319,6 +316,11 @@ int sm_host_process(sm_host_t* _host){
                 }
                 host->m_packet_index = 0;
                 return 1;
+            }else if(host->m_packet_index < buffer_len){
+                host->m_packet_index++;
+                if(host->m_packet_index >= SM_HOST_MAX_BUFFER){
+                    host->m_packet_index = 0;
+                }
             }
 
         }else if((host->m_packet[host->m_packet_index] == SM_PROTO_START_BYTE && host->m_packet_index == SM_PROTO_START_BYTE_INDEX) ||
@@ -341,6 +343,7 @@ int32_t sm_host_asyn_feed(const uint8_t* _data, int32_t _len, void* _user_data){
     }
     for(index = 0; index < _len; index++){
         host->m_buffer[host->m_buffer_index++] = _data[index];
+//        printf("Feed a byte: %2x\n", _data[index]);
         if(host->m_buffer_index >= SM_HOST_MAX_BUFFER){
             host->m_buffer_index = 0;
         }

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(ev-sdk)
+project(libs-storage)
 
 set(CMAKE_C_STANDARD 99)
 

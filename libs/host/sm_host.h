@@ -10,6 +10,8 @@ extern "C"{
 #endif
 
 #include <stdint.h>
+#include "sm_cmd.h"
+#include "sm_elapsed_timer.h"
 
 #define SM_HOST_ADDR_DEFAULT    0x01
 #define SM_HOST_MAX_ADDR        0x7F

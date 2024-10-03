@@ -1,0 +1,4 @@
+# ninja log v6
+1	120	1727951323833773357	common/modbus/mb_master/CMakeFiles/mb_master.dir/sm_mb_master_impl.c.o	bffe5be4183b93e8
+1	175	1727951323833773357	common/modbus/mb_master/CMakeFiles/mb_master.dir/__/__/__/libs/nanoModbus/nanomodbus.c.o	8ce9ef0a0ab89dcb
+175	184	1727951324005764694	common/modbus/mb_master/libmb_master.a	85e48d1c31e1bf56

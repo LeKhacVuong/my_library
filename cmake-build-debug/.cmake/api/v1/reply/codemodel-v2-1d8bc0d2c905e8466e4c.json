@@ -1,0 +1,305 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "utils",
+					"jsonFile" : "directory-utils-Debug-ecc62ddb27eede1f7ffa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "utils",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "libs/nanoModbus",
+					"jsonFile" : "directory-libs.nanoModbus-Debug-10636f65dc13c2b50cd0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "libs/nanoModbus",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "libs/host",
+					"jsonFile" : "directory-libs.host-Debug-3780c3e3a37d90df9186.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libs/host",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "libs/MQTT-C",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.MQTT-C-Debug-3d9add12676acf079ec8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "libs/MQTT-C",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "common/modbus/mb_master",
+					"jsonFile" : "directory-common.modbus.mb_master-Debug-75088ad0a763f4b4c543.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "common/modbus/mb_master",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "common/modbus/mb_slave",
+					"jsonFile" : "directory-common.modbus.mb_slave-Debug-77db754c7908365cf66b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "common/modbus/mb_slave",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "common/mqtt/mqtt_client",
+					"jsonFile" : "directory-common.mqtt.mqtt_client-Debug-07a53dcb4aaaccaa5613.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "common/mqtt/mqtt_client",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "libs-storage"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "ev-sdk-utils",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "lib-nanomodbus",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "libhost",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "MQTT-C",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "mb_master",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "mb_slave",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "mqtt_client",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "host::@0abe29a8c44cf91a8719",
+					"jsonFile" : "target-host-Debug-a863aabd4da775d8b426.json",
+					"name" : "host",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "mb_master::@b12c58d2c8a485810453",
+					"jsonFile" : "target-mb_master-Debug-06d0c7f1001358f6cdac.json",
+					"name" : "mb_master",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "mb_slave::@1227c1050561054838ba",
+					"jsonFile" : "target-mb_slave-Debug-6fde5a483d4db9b588fa.json",
+					"name" : "mb_slave",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "mqtt_client::@cb4461df1aa7e4877327",
+					"jsonFile" : "target-mqtt_client-Debug-44be73831a96def341e9.json",
+					"name" : "mqtt_client",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "mqttc::@91f31f455a0123019961",
+					"jsonFile" : "target-mqttc-Debug-f3432fb711e2c2066673.json",
+					"name" : "mqttc",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "nanomodbus::@baa76e7140dcce53f676",
+					"jsonFile" : "target-nanomodbus-Debug-761c33f1e8e2b13fd74a.json",
+					"name" : "nanomodbus",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "utils::@c810615cce0f7acb82dc",
+					"jsonFile" : "target-utils-Debug-6a6a795d405e5db05b73.json",
+					"name" : "utils",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/vuonglk/Desktop/my_library/cmake-build-debug",
+		"source" : "/home/vuonglk/Desktop/my_library"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
