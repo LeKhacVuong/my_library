@@ -1,0 +1,2 @@
+/usr/bin/ar qc libnanomodbus.a CMakeFiles/nanomodbus.dir/nanomodbus.c.o
+/usr/bin/ranlib libnanomodbus.a

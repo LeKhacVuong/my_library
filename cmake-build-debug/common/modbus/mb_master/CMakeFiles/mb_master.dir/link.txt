@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmb_master.a CMakeFiles/mb_master.dir/sm_mb_master_impl.c.o CMakeFiles/mb_master.dir/__/__/__/libs/nanoModbus/nanomodbus.c.o
+/usr/bin/ranlib libmb_master.a

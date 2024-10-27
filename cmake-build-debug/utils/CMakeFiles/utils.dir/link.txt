@@ -1,0 +1,2 @@
+/usr/bin/ar qc libutils.a CMakeFiles/utils.dir/sm_logger.c.o CMakeFiles/utils.dir/algorithms/sm_crc.c.o CMakeFiles/utils.dir/containers/sm_vector.c.o CMakeFiles/utils.dir/containers/sm_queue.c.o CMakeFiles/utils.dir/unix/serial/unix_serial.c.o
+/usr/bin/ranlib libutils.a

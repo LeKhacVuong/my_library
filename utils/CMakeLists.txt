@@ -15,8 +15,8 @@ set(UTILS_SRC
         timing/elapsed_timer.h
         timing/TimeUtils.h
         timing/Timer.h
-        unix/linux_serial.c
-        unix/linux_serial.h
+        unix/serial/unix_serial.c
+        unix/serial/unix_serial.h
 )
 
 add_library(utils STATIC

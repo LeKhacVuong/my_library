@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmb_slave.a CMakeFiles/mb_slave.dir/sm_mb_slave_impl.c.o CMakeFiles/mb_slave.dir/__/__/__/libs/nanoModbus/nanomodbus.c.o
+/usr/bin/ranlib libmb_slave.a

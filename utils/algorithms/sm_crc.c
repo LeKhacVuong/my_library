@@ -306,6 +306,16 @@ static void CRC_CalculateCRC32Table(void)
 #endif
 }
 
+uint16_t sm_CRC_CalculateCRC16_init_value(uint16_t crc_init, const uint8_t *Buffer, uint32_t Length){
+    uint32_t byteIndex = 0u;
+    uint16_t retVal = crc_init;
+
+    for(byteIndex = 0u; byteIndex < Length; byteIndex++)
+    {
+        retVal = (uint16_t)( (retVal << 8u) ^ CRC16Table[(retVal >> 8u) ^ Buffer[byteIndex]] );
+    }
+    return retVal;
+}
 
 static uint8_t CRC_ReverseBitOrder8(uint8_t value)
 {

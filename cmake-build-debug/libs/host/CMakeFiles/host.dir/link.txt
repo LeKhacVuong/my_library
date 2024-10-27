@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhost.a CMakeFiles/host.dir/sm_host.c.o
+/usr/bin/ranlib libhost.a

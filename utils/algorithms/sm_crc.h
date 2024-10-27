@@ -87,6 +87,17 @@ uint16_t sm_CRC_CalculateCRC16(const uint8_t *Buffer, uint32_t Length);
 uint32_t sm_CRC_CalculateCRC32(const uint8_t *Buffer, uint32_t Length);
 
 
+/**
+ * @brief
+ * @param init value
+ * @param Buffer
+ * @param Length
+ * @return
+ */
+uint16_t sm_CRC_CalculateCRC16_init_value(uint16_t crc_init, const uint8_t *Buffer, uint32_t Length);
+
+
+
 #ifdef __cplusplus
 }
 #endif
