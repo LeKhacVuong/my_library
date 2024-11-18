@@ -19,6 +19,7 @@ include_directories(utils
         common/modbus/mb_master
         common/mqtt
         common/mqtt/mqtt_client
+        common/http
         )
 
 add_subdirectory(utils)
@@ -28,3 +29,4 @@ add_subdirectory(libs/MQTT-C)
 add_subdirectory(common/modbus/mb_master)
 add_subdirectory(common/modbus/mb_slave)
 add_subdirectory(common/mqtt/mqtt_client)
+add_subdirectory(common/http)
