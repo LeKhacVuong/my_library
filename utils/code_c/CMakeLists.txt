@@ -11,6 +11,7 @@ set(C_UTILS_SRC
         algorithms/sm_crc.h
         algorithms/sm_intel_hex.h
         algorithms/sm_intel_hex.c
+        algorithms/math_util.h
 
         containers/sm_vector.c
         containers/sm_vector.h

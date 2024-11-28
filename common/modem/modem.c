@@ -8,6 +8,8 @@
 #include "modem.h"
 #include "sm_logger.h"
 #include "elapsed_timer.h"
+#include "math_util.h"
+#include <stddef.h>
 
 #define TAG "modem"
 
@@ -109,7 +111,7 @@ int32_t modem_read_until_char(modem_t* _modem, char* _buff, char _ch, uint32_t _
 }
 
 
-int32_t modem_read_until_string(modem_t* _modem, char* _buff, const char* _ch, uint32_t _timeout){
+int32_t modem_read_until_string(modem_t* _modem, const char* _str, char* _buff, uint32_t _max_len, uint32_t _timeout){
     modem_impl_t* this = _modem;
     if(!this || !this->m_fn->modem_recv ){
         LOG_ERR(TAG, "Invalid argument");
@@ -125,8 +127,8 @@ int32_t modem_read_until_string(modem_t* _modem, char* _buff, const char* _ch, u
         uint32_t len = this->m_fn->modem_recv(this->m_buff + cur_index, 1, 1, this->m_fn->m_arg);
         if(len > 0){
             cur_index += len;
-            if(this->m_buff[cur_index] == _ch){
-                memcpy(_buff, this->m_buff, cur_index + 1); //End of string '\0'
+            if(this->m_buff[cur_index] == *_str){
+                memcpy(_buff, this->m_buff, math_get_smaller_uint32(cur_index + 1, _max_len)); //End of string '\0'
                 if(this->m_fn->modem_clear){
                     this->m_fn->modem_clear(this->m_fn->m_arg);
                 }
@@ -135,6 +137,32 @@ int32_t modem_read_until_string(modem_t* _modem, char* _buff, const char* _ch, u
         }
     }
     return -1;
+}
+
+const char* modem_polling_data_stringz(modem_t* _modem, const char* _start, uint32_t _timeout){
+    modem_impl_t* this = _modem;
+    if(!this || !this->m_fn->modem_recv ){
+        LOG_ERR(TAG, "Invalid argument");
+        return NULL;
+    }
+
+    elapsed_timer_t wait_timeout;
+    elapsed_timer_resetz(&wait_timeout, _timeout);
+    memset(this->m_buff, 0, this->m_buff_len);
+    uint32_t cur_index = 0;
+
+    while (elapsed_timer_get_remain(&wait_timeout)){
+        uint32_t len = this->m_fn->modem_recv(this->m_buff + cur_index, this->m_buff_len - cur_index, 10, this->m_fn->m_arg);
+        if(len > 0){
+            cur_index += len;
+            const char* data = strstr(this->m_buff, _start);
+            if(data != NULL){
+                LOG_INF(TAG, "Polling data %s ret SUCCEED, data: %s", _start, data);
+                return data;
+            }
+        }
+    }
+    return NULL;
 }
 
 const char* modem_get_buff(modem_t* _modem){

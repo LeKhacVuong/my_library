@@ -21,7 +21,9 @@ int32_t modem_send_cmd(modem_t* _modem, const char* _cmd, const char* _res_ok, c
 
 int32_t modem_read_until_char(modem_t* _modem, char* _buff, char _ch, uint32_t _timeout);
 
-int32_t modem_read_until_string(modem_t* _modem, char* _buff, const char* _ch, uint32_t _timeout);
+int32_t modem_read_until_string(modem_t* _modem, const char* _str, char* _buff, uint32_t _max_len, uint32_t _timeout);
+
+const char* modem_polling_data_stringz(modem_t* _modem, const char* _start, uint32_t _timeout);
 
 const char* modem_get_buff(modem_t* _modem);
 
