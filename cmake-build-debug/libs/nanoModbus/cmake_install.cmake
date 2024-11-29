@@ -1,4 +1,4 @@
-# Install script for directory: /home/vuonglk/Desktop/my_library/libs/nanoModbus
+# Install script for directory: /home/lekhacvuong/Desktop/my_library/libs/nanoModbus
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

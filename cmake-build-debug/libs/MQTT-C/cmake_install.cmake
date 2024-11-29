@@ -1,4 +1,4 @@
-# Install script for directory: /home/vuonglk/Desktop/my_library/libs/MQTT-C
+# Install script for directory: /home/lekhacvuong/Desktop/my_library/libs/MQTT-C
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,14 +43,14 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/vuonglk/Desktop/my_library/cmake-build-debug/libs/MQTT-C/libmqttc.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/lekhacvuong/Desktop/my_library/cmake-build-debug/libs/MQTT-C/libmqttc.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/libs/MQTT-C/CMakeFiles/mqttc.dir/install-cxx-module-bmi-Debug.cmake" OPTIONAL)
+  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/libs/MQTT-C/CMakeFiles/mqttc.dir/install-cxx-module-bmi-Debug.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/vuonglk/Desktop/my_library/libs/MQTT-C/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/lekhacvuong/Desktop/my_library/libs/MQTT-C/include/")
 endif()
 

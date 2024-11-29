@@ -3,13 +3,17 @@
 //
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "gps_gy_neo6.h"
 #include "v_modem.h"
 #include "sm_logger.h"
+#include "ctype.h"
 
 #define TAG "gps_gy_driver"
 
 #define GPS_BUFFER_LENGTH 512
+
+/*********** Global Positioning System *************/
 
 enum {
     GPRMC = 0,
@@ -43,21 +47,73 @@ typedef struct{
 static gps_gy_driver_impl_t g_instance;
 
 static void GPRMC_decode(gps_gy_driver_impl_t* this, char* _raw_data){
-    //$GPRMC,095846.00,V,,,,,,,291124,,,N*76
+    //$GPRMC,155105.00,A,2102.59668,N,10546.60809,E,0.260,,291124,,,A*78
 
     char* token;
-    token = strtok(_raw_data, ",");
+    char *check;
+
+    token = strsep(&_raw_data, ",");  //1, name
     if(strcmp(token, NMEA[GPRMC]) != 0){
         LOG_ERR(TAG, "Invalid GPRMC packet!!");
         return;
     }
 
-    token = strtok(NULL,",");
-    if(token){
-        LOG_INF(TAG, "Time now is %s", token);
+    token = strsep(&_raw_data,","); //2, time
+    if(token && strlen(token)){
+        uint32_t time_raw = atoi(token);
+        if(time_raw){
 
+            LOG_INF(TAG, "Time now is: string - %s, int - %d", token, time_raw);
+        }
     }
 
+    token = strsep(&_raw_data,","); //3, position status
+    bool is_pos_valid = *token == 'A';
+
+    LOG_INF(TAG, "Position status is %s", is_pos_valid?"Valid":"Invalid");
+
+
+    token = strsep(&_raw_data,","); //4, Latitude
+    if(token && strlen(token)){
+        float raw_lat = strtof(token, &check);
+        if(*check == 0){
+            LOG_INF(TAG, "Lat is: string - %s, float - %f", token, raw_lat);
+        }
+    }
+    token = strsep(&_raw_data,","); //5, Latitude direction (N/S)
+
+    token = strsep(&_raw_data,","); //6, Longitude
+    if(token && strlen(token)){
+        float raw_lon = strtof(token, &check);
+        if(*check == 0){
+            LOG_INF(TAG, "Lon is: string - %s, float - %f", token, raw_lon);
+        }
+    }
+    token = strsep(&_raw_data,","); //7, Latitude direction (E/W)
+    token = strsep(&_raw_data,","); //8, Speed over ground
+    token = strsep(&_raw_data,","); //9, Track made good
+
+    token = strsep(&_raw_data,","); //10, Date
+
+    if(token && strlen(token)){
+        uint32_t data_raw = atoi(token);
+        if(data_raw){
+            LOG_INF(TAG, "Date now is: string - %s, int - %d", token, data_raw);
+        }
+    }
+
+    token = strsep(&_raw_data,","); //11, Magnetic variation, degrees
+    token = strsep(&_raw_data,","); //12, Magnetic variation direction E/W
+
+    token = strsep(&_raw_data,"*"); //13, Positioning system mode indicator
+
+    token = strsep(&_raw_data,"\r"); //14, Checksum
+    if(token && strlen(token)) {
+        uint32_t checksum = strtol(token, &check, 16);
+        if (*check == 0) {
+            LOG_INF(TAG, "checksum is: string - %s, hex - 0x%X", token, checksum);
+        }
+    }
 }
 
 int32_t gps_gy_create_driver(v_serial_t* _serial){
