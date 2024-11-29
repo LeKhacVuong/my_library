@@ -20,7 +20,7 @@ static const char *log_level_colors[LOG_LEVEL_NUMBER] = {RED,YEL,GRN,RESET, WHT 
 static const char *log_level_names[LOG_LEVEL_NUMBER] = {"ERROR","WARN ", "INFO ", "DEBUG", "TRACE" };
 
 static void logger_put(const char *str){
-
+    printf("%s\n", str);
 }
 
 #define LOG_QUEUE_SIZE      10

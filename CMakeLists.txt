@@ -28,6 +28,10 @@ include_directories(utils
 
         platform/linux/tcp/tcp_client
         platform/linux/tcp/tcp_server
+        platform/linux/serial
+        platform/linux/timer
+
+        interface
         )
 
 add_subdirectory(utils/code_c)
@@ -39,6 +43,8 @@ add_subdirectory(common/modbus/mb_slave)
 add_subdirectory(common/mqtt/mqtt_client)
 add_subdirectory(common/http)
 add_subdirectory(common/modem)
-add_subdirectory(common/modules)
+add_subdirectory(driver/gps_hy_neo6)
 add_subdirectory(platform/linux/tcp/tcp_client)
 add_subdirectory(platform/linux/tcp/tcp_server)
+add_subdirectory(platform/linux/serial)
+add_subdirectory(platform/linux/timer)

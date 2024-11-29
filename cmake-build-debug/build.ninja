@@ -122,63 +122,63 @@ build cmake_object_order_depends_target_c_utils: phony || .
 build utils/code_c/CMakeFiles/c_utils.dir/sm_logger.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/sm_logger.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/sm_logger.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir
 
 build utils/code_c/CMakeFiles/c_utils.dir/algorithms/sm_crc.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/algorithms/sm_crc.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/algorithms/sm_crc.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir/algorithms
 
 build utils/code_c/CMakeFiles/c_utils.dir/algorithms/sm_intel_hex.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/algorithms/sm_intel_hex.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/algorithms/sm_intel_hex.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir/algorithms
 
 build utils/code_c/CMakeFiles/c_utils.dir/containers/sm_vector.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/containers/sm_vector.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/containers/sm_vector.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir/containers
 
 build utils/code_c/CMakeFiles/c_utils.dir/containers/sm_queue.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/containers/sm_queue.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/containers/sm_queue.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir/containers
 
 build utils/code_c/CMakeFiles/c_utils.dir/containers/sm_stack.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/containers/sm_stack.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/containers/sm_stack.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir/containers
 
 build utils/code_c/CMakeFiles/c_utils.dir/unix/serial/linux_serial.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/unix/serial/linux_serial.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/unix/serial/linux_serial.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir/unix/serial
 
 build utils/code_c/CMakeFiles/c_utils.dir/string/sm_string_t.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/string/sm_string_t.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/string/sm_string_t.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir/string
 
 build utils/code_c/CMakeFiles/c_utils.dir/string/sm_string_util.c.o: C_COMPILER__c_utils_unscanned_Debug /home/vuonglk/Desktop/my_library/utils/code_c/string/sm_string_util.c || cmake_object_order_depends_target_c_utils
   DEP_FILE = utils/code_c/CMakeFiles/c_utils.dir/string/sm_string_util.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = utils/code_c/CMakeFiles/c_utils.dir
   OBJECT_FILE_DIR = utils/code_c/CMakeFiles/c_utils.dir/string
 
@@ -280,7 +280,7 @@ build cmake_object_order_depends_target_nanomodbus: phony || .
 build libs/nanoModbus/CMakeFiles/nanomodbus.dir/nanomodbus.c.o: C_COMPILER__nanomodbus_unscanned_Debug /home/vuonglk/Desktop/my_library/libs/nanoModbus/nanomodbus.c || cmake_object_order_depends_target_nanomodbus
   DEP_FILE = libs/nanoModbus/CMakeFiles/nanomodbus.dir/nanomodbus.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = libs/nanoModbus/CMakeFiles/nanomodbus.dir
   OBJECT_FILE_DIR = libs/nanoModbus/CMakeFiles/nanomodbus.dir
 
@@ -382,7 +382,7 @@ build cmake_object_order_depends_target_host: phony || .
 build libs/host/CMakeFiles/host.dir/sm_host.c.o: C_COMPILER__host_unscanned_Debug /home/vuonglk/Desktop/my_library/libs/host/sm_host.c || cmake_object_order_depends_target_host
   DEP_FILE = libs/host/CMakeFiles/host.dir/sm_host.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = libs/host/CMakeFiles/host.dir
   OBJECT_FILE_DIR = libs/host/CMakeFiles/host.dir
 
@@ -484,14 +484,14 @@ build cmake_object_order_depends_target_mqttc: phony || .
 build libs/MQTT-C/CMakeFiles/mqttc.dir/src/mqtt_pal.c.o: C_COMPILER__mqttc_unscanned_Debug /home/vuonglk/Desktop/my_library/libs/MQTT-C/src/mqtt_pal.c || cmake_object_order_depends_target_mqttc
   DEP_FILE = libs/MQTT-C/CMakeFiles/mqttc.dir/src/mqtt_pal.c.o.d
   FLAGS = -g -std=gnu99 -fPIC -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/libs/MQTT-C/include
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface -I/home/vuonglk/Desktop/my_library/libs/MQTT-C/include
   OBJECT_DIR = libs/MQTT-C/CMakeFiles/mqttc.dir
   OBJECT_FILE_DIR = libs/MQTT-C/CMakeFiles/mqttc.dir/src
 
 build libs/MQTT-C/CMakeFiles/mqttc.dir/src/mqtt.c.o: C_COMPILER__mqttc_unscanned_Debug /home/vuonglk/Desktop/my_library/libs/MQTT-C/src/mqtt.c || cmake_object_order_depends_target_mqttc
   DEP_FILE = libs/MQTT-C/CMakeFiles/mqttc.dir/src/mqtt.c.o.d
   FLAGS = -g -std=gnu99 -fPIC -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/libs/MQTT-C/include
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface -I/home/vuonglk/Desktop/my_library/libs/MQTT-C/include
   OBJECT_DIR = libs/MQTT-C/CMakeFiles/mqttc.dir
   OBJECT_FILE_DIR = libs/MQTT-C/CMakeFiles/mqttc.dir/src
 
@@ -593,14 +593,14 @@ build cmake_object_order_depends_target_mb_master: phony || .
 build common/modbus/mb_master/CMakeFiles/mb_master.dir/sm_mb_master_impl.c.o: C_COMPILER__mb_master_unscanned_Debug /home/vuonglk/Desktop/my_library/common/modbus/mb_master/sm_mb_master_impl.c || cmake_object_order_depends_target_mb_master
   DEP_FILE = common/modbus/mb_master/CMakeFiles/mb_master.dir/sm_mb_master_impl.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = common/modbus/mb_master/CMakeFiles/mb_master.dir
   OBJECT_FILE_DIR = common/modbus/mb_master/CMakeFiles/mb_master.dir
 
 build common/modbus/mb_master/CMakeFiles/mb_master.dir/__/__/__/libs/nanoModbus/nanomodbus.c.o: C_COMPILER__mb_master_unscanned_Debug /home/vuonglk/Desktop/my_library/libs/nanoModbus/nanomodbus.c || cmake_object_order_depends_target_mb_master
   DEP_FILE = common/modbus/mb_master/CMakeFiles/mb_master.dir/__/__/__/libs/nanoModbus/nanomodbus.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = common/modbus/mb_master/CMakeFiles/mb_master.dir
   OBJECT_FILE_DIR = common/modbus/mb_master/CMakeFiles/mb_master.dir/__/__/__/libs/nanoModbus
 
@@ -702,14 +702,14 @@ build cmake_object_order_depends_target_mb_slave: phony || .
 build common/modbus/mb_slave/CMakeFiles/mb_slave.dir/sm_mb_slave_impl.c.o: C_COMPILER__mb_slave_unscanned_Debug /home/vuonglk/Desktop/my_library/common/modbus/mb_slave/sm_mb_slave_impl.c || cmake_object_order_depends_target_mb_slave
   DEP_FILE = common/modbus/mb_slave/CMakeFiles/mb_slave.dir/sm_mb_slave_impl.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = common/modbus/mb_slave/CMakeFiles/mb_slave.dir
   OBJECT_FILE_DIR = common/modbus/mb_slave/CMakeFiles/mb_slave.dir
 
 build common/modbus/mb_slave/CMakeFiles/mb_slave.dir/__/__/__/libs/nanoModbus/nanomodbus.c.o: C_COMPILER__mb_slave_unscanned_Debug /home/vuonglk/Desktop/my_library/libs/nanoModbus/nanomodbus.c || cmake_object_order_depends_target_mb_slave
   DEP_FILE = common/modbus/mb_slave/CMakeFiles/mb_slave.dir/__/__/__/libs/nanoModbus/nanomodbus.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = common/modbus/mb_slave/CMakeFiles/mb_slave.dir
   OBJECT_FILE_DIR = common/modbus/mb_slave/CMakeFiles/mb_slave.dir/__/__/__/libs/nanoModbus
 
@@ -811,7 +811,7 @@ build cmake_object_order_depends_target_mqtt_client: phony || cmake_object_order
 build common/mqtt/mqtt_client/CMakeFiles/mqtt_client.dir/sm_mqtt_client.c.o: C_COMPILER__mqtt_client_unscanned_Debug /home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client/sm_mqtt_client.c || cmake_object_order_depends_target_mqtt_client
   DEP_FILE = common/mqtt/mqtt_client/CMakeFiles/mqtt_client.dir/sm_mqtt_client.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/libs/MQTT-C/include
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface -I/home/vuonglk/Desktop/my_library/libs/MQTT-C/include
   OBJECT_DIR = common/mqtt/mqtt_client/CMakeFiles/mqtt_client.dir
   OBJECT_FILE_DIR = common/mqtt/mqtt_client/CMakeFiles/mqtt_client.dir
 
@@ -913,7 +913,7 @@ build cmake_object_order_depends_target_http_client: phony || cmake_object_order
 build common/http/CMakeFiles/http_client.dir/http_client_curl.c.o: C_COMPILER__http_client_unscanned_Debug /home/vuonglk/Desktop/my_library/common/http/http_client_curl.c || cmake_object_order_depends_target_http_client
   DEP_FILE = common/http/CMakeFiles/http_client.dir/http_client_curl.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = common/http/CMakeFiles/http_client.dir
   OBJECT_FILE_DIR = common/http/CMakeFiles/http_client.dir
 
@@ -945,7 +945,7 @@ build cmake_object_order_depends_target_http_client_exam_down_file: phony || cma
 build common/http/CMakeFiles/http_client_exam_down_file.dir/example_download_file.c.o: C_COMPILER__http_client_exam_down_file_unscanned_Debug /home/vuonglk/Desktop/my_library/common/http/example_download_file.c || cmake_object_order_depends_target_http_client_exam_down_file
   DEP_FILE = common/http/CMakeFiles/http_client_exam_down_file.dir/example_download_file.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = common/http/CMakeFiles/http_client_exam_down_file.dir
   OBJECT_FILE_DIR = common/http/CMakeFiles/http_client_exam_down_file.dir
 
@@ -1045,10 +1045,10 @@ build common/http/install/strip: phony common/http/CMakeFiles/install/strip.util
 
 build cmake_object_order_depends_target_modem: phony || cmake_object_order_depends_target_c_utils
 
-build common/modem/CMakeFiles/modem.dir/modem.c.o: C_COMPILER__modem_unscanned_Debug /home/vuonglk/Desktop/my_library/common/modem/modem.c || cmake_object_order_depends_target_modem
-  DEP_FILE = common/modem/CMakeFiles/modem.dir/modem.c.o.d
+build common/modem/CMakeFiles/modem.dir/v_modem.c.o: C_COMPILER__modem_unscanned_Debug /home/vuonglk/Desktop/my_library/common/modem/v_modem.c || cmake_object_order_depends_target_modem
+  DEP_FILE = common/modem/CMakeFiles/modem.dir/v_modem.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = common/modem/CMakeFiles/modem.dir
   OBJECT_FILE_DIR = common/modem/CMakeFiles/modem.dir
 
@@ -1060,7 +1060,7 @@ build common/modem/CMakeFiles/modem.dir/modem.c.o: C_COMPILER__modem_unscanned_D
 #############################################
 # Link the static library common/modem/libmodem.a
 
-build common/modem/libmodem.a: C_STATIC_LIBRARY_LINKER__modem_Debug common/modem/CMakeFiles/modem.dir/modem.c.o || utils/code_c/libc_utils.a
+build common/modem/libmodem.a: C_STATIC_LIBRARY_LINKER__modem_Debug common/modem/CMakeFiles/modem.dir/v_modem.c.o || utils/code_c/libc_utils.a
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = common/modem/CMakeFiles/modem.dir
   POST_BUILD = :
@@ -1139,6 +1139,141 @@ build common/modem/install/strip: phony common/modem/CMakeFiles/install/strip.ut
 # =============================================================================
 
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target gps_gy
+
+
+#############################################
+# Order-only phony target for gps_gy
+
+build cmake_object_order_depends_target_gps_gy: phony || cmake_object_order_depends_target_c_utils cmake_object_order_depends_target_modem
+
+build driver/gps_hy_neo6/CMakeFiles/gps_gy.dir/gps_gy_neo6.c.o: C_COMPILER__gps_gy_unscanned_Debug /home/vuonglk/Desktop/my_library/driver/gps_hy_neo6/gps_gy_neo6.c || cmake_object_order_depends_target_gps_gy
+  DEP_FILE = driver/gps_hy_neo6/CMakeFiles/gps_gy.dir/gps_gy_neo6.c.o.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
+  OBJECT_DIR = driver/gps_hy_neo6/CMakeFiles/gps_gy.dir
+  OBJECT_FILE_DIR = driver/gps_hy_neo6/CMakeFiles/gps_gy.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gps_gy
+
+
+#############################################
+# Link the static library driver/gps_hy_neo6/libgps_gy.a
+
+build driver/gps_hy_neo6/libgps_gy.a: C_STATIC_LIBRARY_LINKER__gps_gy_Debug driver/gps_hy_neo6/CMakeFiles/gps_gy.dir/gps_gy_neo6.c.o || common/modem/libmodem.a utils/code_c/libc_utils.a
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = driver/gps_hy_neo6/CMakeFiles/gps_gy.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = driver/gps_hy_neo6/libgps_gy.a
+  TARGET_PDB = gps_gy.a.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target gps_test
+
+
+#############################################
+# Order-only phony target for gps_test
+
+build cmake_object_order_depends_target_gps_test: phony || cmake_object_order_depends_target_c_utils cmake_object_order_depends_target_gps_gy cmake_object_order_depends_target_modem cmake_object_order_depends_target_unix_timer
+
+build driver/gps_hy_neo6/CMakeFiles/gps_test.dir/example.c.o: C_COMPILER__gps_test_unscanned_Debug /home/vuonglk/Desktop/my_library/driver/gps_hy_neo6/example.c || cmake_object_order_depends_target_gps_test
+  DEP_FILE = driver/gps_hy_neo6/CMakeFiles/gps_test.dir/example.c.o.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
+  OBJECT_DIR = driver/gps_hy_neo6/CMakeFiles/gps_test.dir
+  OBJECT_FILE_DIR = driver/gps_hy_neo6/CMakeFiles/gps_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target gps_test
+
+
+#############################################
+# Link the executable driver/gps_hy_neo6/gps_test
+
+build driver/gps_hy_neo6/gps_test: C_EXECUTABLE_LINKER__gps_test_Debug driver/gps_hy_neo6/CMakeFiles/gps_test.dir/example.c.o | driver/gps_hy_neo6/libgps_gy.a platform/linux/timer/libunix_timer.a common/modem/libmodem.a utils/code_c/libc_utils.a || common/modem/libmodem.a driver/gps_hy_neo6/libgps_gy.a platform/linux/timer/libunix_timer.a utils/code_c/libc_utils.a
+  FLAGS = -g
+  LINK_LIBRARIES = driver/gps_hy_neo6/libgps_gy.a  platform/linux/timer/libunix_timer.a  common/modem/libmodem.a  -lrt  utils/code_c/libc_utils.a
+  OBJECT_DIR = driver/gps_hy_neo6/CMakeFiles/gps_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = driver/gps_hy_neo6/gps_test
+  TARGET_PDB = gps_test.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build driver/gps_hy_neo6/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6 && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build driver/gps_hy_neo6/edit_cache: phony driver/gps_hy_neo6/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build driver/gps_hy_neo6/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6 && /snap/clion/305/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/vuonglk/Desktop/my_library -B/home/vuonglk/Desktop/my_library/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build driver/gps_hy_neo6/rebuild_cache: phony driver/gps_hy_neo6/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build driver/gps_hy_neo6/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build driver/gps_hy_neo6/CMakeFiles/install.util: CUSTOM_COMMAND driver/gps_hy_neo6/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6 && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build driver/gps_hy_neo6/install: phony driver/gps_hy_neo6/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build driver/gps_hy_neo6/CMakeFiles/install/local.util: CUSTOM_COMMAND driver/gps_hy_neo6/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6 && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build driver/gps_hy_neo6/install/local: phony driver/gps_hy_neo6/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build driver/gps_hy_neo6/CMakeFiles/install/strip.util: CUSTOM_COMMAND driver/gps_hy_neo6/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6 && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build driver/gps_hy_neo6/install/strip: phony driver/gps_hy_neo6/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/vuonglk/Desktop/my_library/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
 # Object build statements for STATIC_LIBRARY target tcp_client
 
 
@@ -1150,7 +1285,7 @@ build cmake_object_order_depends_target_tcp_client: phony || .
 build platform/linux/tcp/tcp_client/CMakeFiles/tcp_client.dir/tcp_client.c.o: C_COMPILER__tcp_client_unscanned_Debug /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client/tcp_client.c || cmake_object_order_depends_target_tcp_client
   DEP_FILE = platform/linux/tcp/tcp_client/CMakeFiles/tcp_client.dir/tcp_client.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = platform/linux/tcp/tcp_client/CMakeFiles/tcp_client.dir
   OBJECT_FILE_DIR = platform/linux/tcp/tcp_client/CMakeFiles/tcp_client.dir
 
@@ -1252,7 +1387,7 @@ build cmake_object_order_depends_target_tcp_server: phony || .
 build platform/linux/tcp/tcp_server/CMakeFiles/tcp_server.dir/tcp_server.c.o: C_COMPILER__tcp_server_unscanned_Debug /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server/tcp_server.c || cmake_object_order_depends_target_tcp_server
   DEP_FILE = platform/linux/tcp/tcp_server/CMakeFiles/tcp_server.dir/tcp_server.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
   OBJECT_DIR = platform/linux/tcp/tcp_server/CMakeFiles/tcp_server.dir
   OBJECT_FILE_DIR = platform/linux/tcp/tcp_server/CMakeFiles/tcp_server.dir
 
@@ -1338,9 +1473,217 @@ build platform/linux/tcp/tcp_server/CMakeFiles/install/strip.util: CUSTOM_COMMAN
 build platform/linux/tcp/tcp_server/install/strip: phony platform/linux/tcp/tcp_server/CMakeFiles/install/strip.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/vuonglk/Desktop/my_library/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target unix_serial
+
+
+#############################################
+# Order-only phony target for unix_serial
+
+build cmake_object_order_depends_target_unix_serial: phony || .
+
+build platform/linux/serial/CMakeFiles/unix_serial.dir/v_unix_serial.c.o: C_COMPILER__unix_serial_unscanned_Debug /home/vuonglk/Desktop/my_library/platform/linux/serial/v_unix_serial.c || cmake_object_order_depends_target_unix_serial
+  DEP_FILE = platform/linux/serial/CMakeFiles/unix_serial.dir/v_unix_serial.c.o.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
+  OBJECT_DIR = platform/linux/serial/CMakeFiles/unix_serial.dir
+  OBJECT_FILE_DIR = platform/linux/serial/CMakeFiles/unix_serial.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target unix_serial
+
+
+#############################################
+# Link the static library platform/linux/serial/libunix_serial.a
+
+build platform/linux/serial/libunix_serial.a: C_STATIC_LIBRARY_LINKER__unix_serial_Debug platform/linux/serial/CMakeFiles/unix_serial.dir/v_unix_serial.c.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = platform/linux/serial/CMakeFiles/unix_serial.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = platform/linux/serial/libunix_serial.a
+  TARGET_PDB = unix_serial.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build platform/linux/serial/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build platform/linux/serial/edit_cache: phony platform/linux/serial/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build platform/linux/serial/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial && /snap/clion/305/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/vuonglk/Desktop/my_library -B/home/vuonglk/Desktop/my_library/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build platform/linux/serial/rebuild_cache: phony platform/linux/serial/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build platform/linux/serial/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build platform/linux/serial/CMakeFiles/install.util: CUSTOM_COMMAND platform/linux/serial/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build platform/linux/serial/install: phony platform/linux/serial/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build platform/linux/serial/CMakeFiles/install/local.util: CUSTOM_COMMAND platform/linux/serial/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build platform/linux/serial/install/local: phony platform/linux/serial/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build platform/linux/serial/CMakeFiles/install/strip.util: CUSTOM_COMMAND platform/linux/serial/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build platform/linux/serial/install/strip: phony platform/linux/serial/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/vuonglk/Desktop/my_library/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target unix_timer
+
+
+#############################################
+# Order-only phony target for unix_timer
+
+build cmake_object_order_depends_target_unix_timer: phony || cmake_object_order_depends_target_c_utils
+
+build platform/linux/timer/CMakeFiles/unix_timer.dir/v_timer.c.o: C_COMPILER__unix_timer_unscanned_Debug /home/vuonglk/Desktop/my_library/platform/linux/timer/v_timer.c || cmake_object_order_depends_target_unix_timer
+  DEP_FILE = platform/linux/timer/CMakeFiles/unix_timer.dir/v_timer.c.o.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  INCLUDES = -I/home/vuonglk/Desktop/my_library/utils -I/home/vuonglk/Desktop/my_library/utils/code_c/algorithms -I/home/vuonglk/Desktop/my_library/utils/code_c/timing -I/home/vuonglk/Desktop/my_library/utils/code_c/string -I/home/vuonglk/Desktop/my_library/utils/code_c/unix -I/home/vuonglk/Desktop/my_library/utils/code_c/containers -I/home/vuonglk/Desktop/my_library/utils/code_c -I/home/vuonglk/Desktop/my_library/libs -I/home/vuonglk/Desktop/my_library/libs/nanoModbus -I/home/vuonglk/Desktop/my_library/libs/host -I/home/vuonglk/Desktop/my_library/libs/MQTT-C -I/home/vuonglk/Desktop/my_library/common -I/home/vuonglk/Desktop/my_library/common/modbus -I/home/vuonglk/Desktop/my_library/common/modbus/mb_slave -I/home/vuonglk/Desktop/my_library/common/modbus/mb_master -I/home/vuonglk/Desktop/my_library/common/mqtt -I/home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client -I/home/vuonglk/Desktop/my_library/common/http -I/home/vuonglk/Desktop/my_library/common/modem -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client -I/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server -I/home/vuonglk/Desktop/my_library/platform/linux/serial -I/home/vuonglk/Desktop/my_library/platform/linux/timer -I/home/vuonglk/Desktop/my_library/interface
+  OBJECT_DIR = platform/linux/timer/CMakeFiles/unix_timer.dir
+  OBJECT_FILE_DIR = platform/linux/timer/CMakeFiles/unix_timer.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target unix_timer
+
+
+#############################################
+# Link the static library platform/linux/timer/libunix_timer.a
+
+build platform/linux/timer/libunix_timer.a: C_STATIC_LIBRARY_LINKER__unix_timer_Debug platform/linux/timer/CMakeFiles/unix_timer.dir/v_timer.c.o || utils/code_c/libc_utils.a
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = platform/linux/timer/CMakeFiles/unix_timer.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = platform/linux/timer/libunix_timer.a
+  TARGET_PDB = unix_timer.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build platform/linux/timer/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build platform/linux/timer/edit_cache: phony platform/linux/timer/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build platform/linux/timer/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer && /snap/clion/305/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/vuonglk/Desktop/my_library -B/home/vuonglk/Desktop/my_library/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build platform/linux/timer/rebuild_cache: phony platform/linux/timer/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build platform/linux/timer/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build platform/linux/timer/CMakeFiles/install.util: CUSTOM_COMMAND platform/linux/timer/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build platform/linux/timer/install: phony platform/linux/timer/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build platform/linux/timer/CMakeFiles/install/local.util: CUSTOM_COMMAND platform/linux/timer/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build platform/linux/timer/install/local: phony platform/linux/timer/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build platform/linux/timer/CMakeFiles/install/strip.util: CUSTOM_COMMAND platform/linux/timer/all
+  COMMAND = cd /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer && /snap/clion/305/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build platform/linux/timer/install/strip: phony platform/linux/timer/CMakeFiles/install/strip.util
+
+# =============================================================================
 # Target aliases.
 
 build c_utils: phony utils/code_c/libc_utils.a
+
+build gps_gy: phony driver/gps_hy_neo6/libgps_gy.a
+
+build gps_test: phony driver/gps_hy_neo6/gps_test
 
 build host: phony libs/host/libhost.a
 
@@ -1349,6 +1692,8 @@ build http_client: phony common/http/libhttp_client.a
 build http_client_exam_down_file: phony common/http/http_client_exam_down_file
 
 build libc_utils.a: phony utils/code_c/libc_utils.a
+
+build libgps_gy.a: phony driver/gps_hy_neo6/libgps_gy.a
 
 build libhost.a: phony libs/host/libhost.a
 
@@ -1370,6 +1715,10 @@ build libtcp_client.a: phony platform/linux/tcp/tcp_client/libtcp_client.a
 
 build libtcp_server.a: phony platform/linux/tcp/tcp_server/libtcp_server.a
 
+build libunix_serial.a: phony platform/linux/serial/libunix_serial.a
+
+build libunix_timer.a: phony platform/linux/timer/libunix_timer.a
+
 build mb_master: phony common/modbus/mb_master/libmb_master.a
 
 build mb_slave: phony common/modbus/mb_slave/libmb_slave.a
@@ -1386,6 +1735,10 @@ build tcp_client: phony platform/linux/tcp/tcp_client/libtcp_client.a
 
 build tcp_server: phony platform/linux/tcp/tcp_server/libtcp_server.a
 
+build unix_serial: phony platform/linux/serial/libunix_serial.a
+
+build unix_timer: phony platform/linux/timer/libunix_timer.a
+
 # =============================================================================
 # Folder targets.
 
@@ -1394,7 +1747,7 @@ build tcp_server: phony platform/linux/tcp/tcp_server/libtcp_server.a
 #############################################
 # Folder: /home/vuonglk/Desktop/my_library/cmake-build-debug
 
-build all: phony utils/code_c/all libs/nanoModbus/all libs/host/all libs/MQTT-C/all common/modbus/mb_master/all common/modbus/mb_slave/all common/mqtt/mqtt_client/all common/http/all common/modem/all platform/linux/tcp/tcp_client/all platform/linux/tcp/tcp_server/all
+build all: phony utils/code_c/all libs/nanoModbus/all libs/host/all libs/MQTT-C/all common/modbus/mb_master/all common/modbus/mb_slave/all common/mqtt/mqtt_client/all common/http/all common/modem/all driver/gps_hy_neo6/all platform/linux/tcp/tcp_client/all platform/linux/tcp/tcp_server/all platform/linux/serial/all platform/linux/timer/all
 
 # =============================================================================
 
@@ -1434,6 +1787,13 @@ build common/mqtt/mqtt_client/all: phony common/mqtt/mqtt_client/libmqtt_client.
 # =============================================================================
 
 #############################################
+# Folder: /home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6
+
+build driver/gps_hy_neo6/all: phony driver/gps_hy_neo6/libgps_gy.a driver/gps_hy_neo6/gps_test
+
+# =============================================================================
+
+#############################################
 # Folder: /home/vuonglk/Desktop/my_library/cmake-build-debug/libs/MQTT-C
 
 build libs/MQTT-C/all: phony libs/MQTT-C/libmqttc.a
@@ -1455,6 +1815,13 @@ build libs/nanoModbus/all: phony libs/nanoModbus/libnanomodbus.a
 # =============================================================================
 
 #############################################
+# Folder: /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial
+
+build platform/linux/serial/all: phony platform/linux/serial/libunix_serial.a
+
+# =============================================================================
+
+#############################################
 # Folder: /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_client
 
 build platform/linux/tcp/tcp_client/all: phony platform/linux/tcp/tcp_client/libtcp_client.a
@@ -1465,6 +1832,13 @@ build platform/linux/tcp/tcp_client/all: phony platform/linux/tcp/tcp_client/lib
 # Folder: /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_server
 
 build platform/linux/tcp/tcp_server/all: phony platform/linux/tcp/tcp_server/libtcp_server.a
+
+# =============================================================================
+
+#############################################
+# Folder: /home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer
+
+build platform/linux/timer/all: phony platform/linux/timer/libunix_timer.a
 
 # =============================================================================
 
@@ -1480,14 +1854,14 @@ build utils/code_c/all: phony utils/code_c/libc_utils.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/vuonglk/Desktop/my_library/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/http/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modbus/mb_master/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modbus/mb_slave/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modem/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/MQTT-C/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/host/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/nanoModbus/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server/CMakeLists.txt /home/vuonglk/Desktop/my_library/utils/code_c/CMakeLists.txt /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/vuonglk/Desktop/my_library/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/http/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modbus/mb_master/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modbus/mb_slave/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modem/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client/CMakeLists.txt /home/vuonglk/Desktop/my_library/driver/gps_hy_neo6/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/MQTT-C/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/host/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/nanoModbus/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/serial/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/timer/CMakeLists.txt /home/vuonglk/Desktop/my_library/utils/code_c/CMakeLists.txt /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/vuonglk/Desktop/my_library/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/http/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modbus/mb_master/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modbus/mb_slave/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modem/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/MQTT-C/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/host/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/nanoModbus/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server/CMakeLists.txt /home/vuonglk/Desktop/my_library/utils/code_c/CMakeLists.txt /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
+build /home/vuonglk/Desktop/my_library/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/http/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modbus/mb_master/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modbus/mb_slave/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/modem/CMakeLists.txt /home/vuonglk/Desktop/my_library/common/mqtt/mqtt_client/CMakeLists.txt /home/vuonglk/Desktop/my_library/driver/gps_hy_neo6/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/MQTT-C/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/host/CMakeLists.txt /home/vuonglk/Desktop/my_library/libs/nanoModbus/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/serial/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_client/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server/CMakeLists.txt /home/vuonglk/Desktop/my_library/platform/linux/timer/CMakeLists.txt /home/vuonglk/Desktop/my_library/utils/code_c/CMakeLists.txt /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake /snap/clion/305/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
 
 
 #############################################

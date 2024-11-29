@@ -89,12 +89,27 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_client/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_server/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

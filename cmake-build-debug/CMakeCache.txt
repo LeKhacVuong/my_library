@@ -297,13 +297,13 @@ code_c_utils_IS_TOP_LEVEL:STATIC=OFF
 code_c_utils_SOURCE_DIR:STATIC=/home/vuonglk/Desktop/my_library/utils/code_c
 
 //Value Computed by CMake
-gps_gy_BINARY_DIR:STATIC=/home/vuonglk/Desktop/my_library/cmake-build-debug/common/modules
+gps_gy_BINARY_DIR:STATIC=/home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6
 
 //Value Computed by CMake
 gps_gy_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-gps_gy_SOURCE_DIR:STATIC=/home/vuonglk/Desktop/my_library/common/modules
+gps_gy_SOURCE_DIR:STATIC=/home/vuonglk/Desktop/my_library/driver/gps_hy_neo6
 
 //Value Computed by CMake
 http-client_BINARY_DIR:STATIC=/home/vuonglk/Desktop/my_library/cmake-build-debug/common/http
@@ -394,6 +394,24 @@ tcp_server_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 tcp_server_SOURCE_DIR:STATIC=/home/vuonglk/Desktop/my_library/platform/linux/tcp/tcp_server
+
+//Value Computed by CMake
+unix_serial_BINARY_DIR:STATIC=/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial
+
+//Value Computed by CMake
+unix_serial_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+unix_serial_SOURCE_DIR:STATIC=/home/vuonglk/Desktop/my_library/platform/linux/serial
+
+//Value Computed by CMake
+unix_timer_BINARY_DIR:STATIC=/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer
+
+//Value Computed by CMake
+unix_timer_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+unix_timer_SOURCE_DIR:STATIC=/home/vuonglk/Desktop/my_library/platform/linux/timer
 
 
 ########################
@@ -528,7 +546,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=13
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
