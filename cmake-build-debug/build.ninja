@@ -1177,7 +1177,7 @@ build driver/gps_hy_neo6/libgps_gy.a: C_STATIC_LIBRARY_LINKER__gps_gy_Debug driv
 #############################################
 # Order-only phony target for gps_test
 
-build cmake_object_order_depends_target_gps_test: phony || cmake_object_order_depends_target_c_utils cmake_object_order_depends_target_gps_gy cmake_object_order_depends_target_modem cmake_object_order_depends_target_unix_timer
+build cmake_object_order_depends_target_gps_test: phony || cmake_object_order_depends_target_c_utils cmake_object_order_depends_target_gps_gy cmake_object_order_depends_target_modem cmake_object_order_depends_target_unix_serial cmake_object_order_depends_target_unix_timer
 
 build driver/gps_hy_neo6/CMakeFiles/gps_test.dir/example.c.o: C_COMPILER__gps_test_unscanned_Debug /home/vuonglk/Desktop/my_library/driver/gps_hy_neo6/example.c || cmake_object_order_depends_target_gps_test
   DEP_FILE = driver/gps_hy_neo6/CMakeFiles/gps_test.dir/example.c.o.d
@@ -1194,9 +1194,9 @@ build driver/gps_hy_neo6/CMakeFiles/gps_test.dir/example.c.o: C_COMPILER__gps_te
 #############################################
 # Link the executable driver/gps_hy_neo6/gps_test
 
-build driver/gps_hy_neo6/gps_test: C_EXECUTABLE_LINKER__gps_test_Debug driver/gps_hy_neo6/CMakeFiles/gps_test.dir/example.c.o | driver/gps_hy_neo6/libgps_gy.a platform/linux/timer/libunix_timer.a common/modem/libmodem.a utils/code_c/libc_utils.a || common/modem/libmodem.a driver/gps_hy_neo6/libgps_gy.a platform/linux/timer/libunix_timer.a utils/code_c/libc_utils.a
+build driver/gps_hy_neo6/gps_test: C_EXECUTABLE_LINKER__gps_test_Debug driver/gps_hy_neo6/CMakeFiles/gps_test.dir/example.c.o | driver/gps_hy_neo6/libgps_gy.a platform/linux/timer/libunix_timer.a platform/linux/serial/libunix_serial.a common/modem/libmodem.a utils/code_c/libc_utils.a || common/modem/libmodem.a driver/gps_hy_neo6/libgps_gy.a platform/linux/serial/libunix_serial.a platform/linux/timer/libunix_timer.a utils/code_c/libc_utils.a
   FLAGS = -g
-  LINK_LIBRARIES = driver/gps_hy_neo6/libgps_gy.a  platform/linux/timer/libunix_timer.a  common/modem/libmodem.a  -lrt  utils/code_c/libc_utils.a
+  LINK_LIBRARIES = driver/gps_hy_neo6/libgps_gy.a  platform/linux/timer/libunix_timer.a  platform/linux/serial/libunix_serial.a  common/modem/libmodem.a  -lrt  utils/code_c/libc_utils.a
   OBJECT_DIR = driver/gps_hy_neo6/CMakeFiles/gps_test.dir
   POST_BUILD = :
   PRE_LINK = :

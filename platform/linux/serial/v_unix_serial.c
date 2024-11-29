@@ -12,9 +12,12 @@
 #include <err.h>
 #include <errno.h>
 #include "stdio.h"
+#include "sm_logger.h"
+
+#define TAG "unix_serial"
 
 typedef struct{
-    v_serial_t* m_base;
+    v_serial_t m_base;
     int32_t m_baud;
     int32_t m_fd;
 }unix_serial_impl_t;
@@ -233,24 +236,26 @@ v_serial_t* unix_serial_create(const char* _port, uint32_t _baud, UNIX_SERIAL_MO
         return NULL;
     }
 
-    int serial_port = -1;
+    this->m_fd = -1;
 
     if(_mode == UNIX_SERIAL_MODE_BLOCKING){
-        serial_port = open(_port, O_RDWR | O_NOCTTY ); //| O_NDELAY
+        this->m_fd = open(_port, O_RDWR | O_NOCTTY ); //| O_NDELAY
     }else{
-        serial_port = open(_port, O_RDWR | O_NOCTTY | O_NDELAY | O_SYNC);
+        this->m_fd = open(_port, O_RDWR | O_NOCTTY | O_NDELAY | O_SYNC);
     }
 
-    if(serial_port < 0){
+    if(this->m_fd < 0){
         printf("Could NOT open serial device file: %s\n", _port);
+        free(this);
         return NULL;
     }
 
-    if(unix_serial_open(this->m_base, _baud) < 0){
+    if(serial_config(this->m_fd, _baud) < 0){
         free(this);
-        printf("Could NOT open init device file: %s\n", _port);
         return NULL;
     }
-    this->m_base = &g_proc;
-    return this->m_base;
+
+    this->m_base = g_proc;
+    LOG_INF(TAG, "Open %s success, fd %d", _port, this->m_fd);
+    return &this->m_base;
 }

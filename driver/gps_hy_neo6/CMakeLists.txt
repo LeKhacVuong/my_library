@@ -12,5 +12,5 @@ target_link_libraries(gps_gy modem)
 
 add_executable(gps_test example.c)
 
-target_link_libraries(gps_test gps_gy unix_timer)
+target_link_libraries(gps_test gps_gy unix_timer unix_serial)
 
