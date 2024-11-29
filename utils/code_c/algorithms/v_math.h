@@ -7,11 +7,11 @@
 #include "stdint.h"
 
 
-inline uint32_t v_max_off(uint32_t a, uint32_t b){
+inline static uint32_t v_max_off(uint32_t a, uint32_t b){
     return (a > b) ? a : b;
 }
 
-inline uint32_t v_min_off(uint32_t a, uint32_t b){
+inline static uint32_t v_min_off(uint32_t a, uint32_t b){
     return (a < b) ? a : b;
 }
 

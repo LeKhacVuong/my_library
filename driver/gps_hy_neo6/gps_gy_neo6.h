@@ -5,10 +5,23 @@
 #ifndef LIBS_STORAGE_GPS_GY_NEOS_H
 #define LIBS_STORAGE_GPS_GY_NEOS_H
 #include "stdint.h"
+#include "v_serial.h"
 
-int32_t gps_init();
+typedef union datetime{
+    uint8_t arr_datetime[6];
+    struct {
+        uint8_t year;
+        uint8_t mon;
+        uint8_t day;
+        uint8_t hour;
+        uint8_t min;
+        uint8_t sec;
+    };
+}gps_date_time_t;
 
-int32_t gps_process();
+int32_t gps_gy_create_driver(v_serial_t* _serial);
+
+int32_t gps_gy_process();
 
 
 #endif //LIBS_STORAGE_GPS_GY_NEOS_H

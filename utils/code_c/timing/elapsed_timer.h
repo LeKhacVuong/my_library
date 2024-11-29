@@ -14,7 +14,7 @@ extern "C" {
 #include <time.h>
 
 #ifdef __linux
-inline int64_t get_tick_count(){
+inline static int64_t get_tick_count(){
     struct timespec ts = {0, 0};
     clock_gettime(CLOCK_MONOTONIC, &ts);
     return (int64_t)(ts.tv_sec*1000 + ts.tv_nsec/1000000);

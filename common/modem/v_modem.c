@@ -16,44 +16,32 @@
 typedef struct{
     uint32_t m_buff_len;
     v_serial_t* m_serial;
-    char* m_buff;
+    char m_buff[1024];
     volatile uint8_t m_lock; ///TODO later
 }modem_impl_t;
 
 static modem_impl_t g_modem;
 
-modem_t* modem_get_default(uint32_t _buffer_len, v_serial_t* _serial){
-    g_modem.m_buff = malloc(_buffer_len);
-    if(!g_modem.m_buff){
-        LOG_ERR(TAG, "Over heap for modem buffer!!");
-        return NULL;
-    }
-    g_modem.m_buff_len = _buffer_len;
+v_modem_t* modem_create_default(uint32_t _buffer_len, v_serial_t* _serial){
+    g_modem.m_buff_len = 1024;
     g_modem.m_lock = 0;
     g_modem.m_serial = _serial;
     return &g_modem;
 }
 
-modem_t* modem_create(uint32_t _buffer_len, v_serial_t* _serial){
+v_modem_t* modem_create(uint32_t _buffer_len, v_serial_t* _serial){
     modem_impl_t* this = malloc(sizeof(modem_impl_t));
     if(!this){
         LOG_ERR(TAG, "Over heap for modem instance!!");
         return NULL;
     }
-
-    this->m_buff = malloc(_buffer_len);
-    if(!this->m_buff){
-        free(this);
-        LOG_ERR(TAG, "Over heap for modem buffer!!");
-        return NULL;
-    }
-    this->m_buff_len = _buffer_len;
+    this->m_buff_len = 1024;
     this->m_lock = 0;
     this->m_serial = _serial;
     return this;
 }
 
-int32_t modem_send_cmd(modem_t* _modem, const char* _cmd, const char* _res_ok, const char* _res_fail, uint32_t _timeout){
+int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok, const char* _res_fail, uint32_t _timeout){
     modem_impl_t* this = _modem;
     if(!this || !this->m_serial ){
         LOG_ERR(TAG, "Invalid argument");
@@ -69,11 +57,11 @@ int32_t modem_send_cmd(modem_t* _modem, const char* _cmd, const char* _res_ok, c
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
-    uint32_t cur_index = 0;
+    int32_t cur_index = 0;
     int8_t res = -1;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        uint32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 10);
+        int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 10);
         if(len > 0){
             cur_index += len;
             if(strstr(this->m_buff, _res_ok) != NULL){
@@ -86,13 +74,17 @@ int32_t modem_send_cmd(modem_t* _modem, const char* _cmd, const char* _res_ok, c
                 res = -2;
                 break;
             }
+            cur_index += len;
+            if(cur_index >= this->m_buff_len){
+                return -1;
+            }
         }
     }
 
     return res;
 }
 
-int32_t modem_read_until_char(modem_t* _modem, char* _buff, char _ch, uint32_t _timeout){
+int32_t modem_read_until_char(v_modem_t* _modem, char _ch, char* _buff, uint32_t _max_len, uint32_t _timeout){
     modem_impl_t* this = _modem;
     if(!this || !this->m_serial){
         LOG_ERR(TAG, "Invalid argument");
@@ -104,15 +96,19 @@ int32_t modem_read_until_char(modem_t* _modem, char* _buff, char _ch, uint32_t _
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
-    uint32_t cur_index = 0;
+    int32_t cur_index = 0;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        uint32_t len = serial->read_blocking(serial, this->m_buff + cur_index, 1, 1);
+        int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, 1, 0);
         if(len > 0){
-            cur_index += len;
             if(this->m_buff[cur_index] == _ch){
-                memcpy(_buff, this->m_buff, cur_index + 1); //End of string '\0'
-                return cur_index + 1;
+                uint32_t true_len = v_min_off(cur_index + 1, _max_len);
+                memcpy(_buff, this->m_buff, true_len); //End of string '\0'
+                return true_len;
+            }
+            cur_index += 1;
+            if(cur_index >= this->m_buff_len){
+                return -1;
             }
         }
     }
@@ -120,7 +116,7 @@ int32_t modem_read_until_char(modem_t* _modem, char* _buff, char _ch, uint32_t _
 }
 
 
-int32_t modem_read_until_string(modem_t* _modem, const char* _str, char* _buff, uint32_t _max_len, uint32_t _timeout){
+int32_t modem_read_until_string(v_modem_t* _modem, const char* _str, char* _buff, uint32_t _max_len, uint32_t _timeout){
     modem_impl_t* this = _modem;
     if(!this || !this->m_serial){
         LOG_ERR(TAG, "Invalid argument");
@@ -132,22 +128,26 @@ int32_t modem_read_until_string(modem_t* _modem, const char* _str, char* _buff, 
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
-    uint32_t cur_index = 0;
+    int32_t cur_index = 0;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        uint32_t len = serial->read(serial, this->m_buff + cur_index, 1);
+        int32_t len = serial->read(serial, this->m_buff + cur_index, 1);
         if(len > 0){
+            if(strstr(this->m_buff, _str)){
+                uint32_t true_len = v_min_off(cur_index + 1, _max_len);
+                memcpy(_buff, this->m_buff, true_len); //End of string '\0'
+                return true_len;
+            }
             cur_index += len;
-            if(this->m_buff[cur_index] == *_str){
-                memcpy(_buff, this->m_buff, v_min_off(cur_index + 1, _max_len)); //End of string '\0'
-                return cur_index + 1;
+            if(cur_index >= this->m_buff_len){
+                return -1;
             }
         }
     }
     return -1;
 }
 
-char* modem_polling_data_stringz(modem_t* _modem, const char* _start, uint32_t _timeout){
+char* modem_polling_data_stringz(v_modem_t* _modem, const char* _start, uint32_t _timeout){
     modem_impl_t* this = _modem;
     if(!this || !this->m_serial ){
         LOG_ERR(TAG, "Invalid argument");
@@ -159,10 +159,10 @@ char* modem_polling_data_stringz(modem_t* _modem, const char* _start, uint32_t _
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
-    uint32_t cur_index = 0;
+    int32_t cur_index = 0;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        uint32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 10);
+        int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 10);
         if(len > 0){
             cur_index += len;
             const char* data = strstr(this->m_buff, _start);
@@ -175,7 +175,7 @@ char* modem_polling_data_stringz(modem_t* _modem, const char* _start, uint32_t _
     return NULL;
 }
 
-char* modem_get_buff(modem_t* _modem){
+char* modem_get_buff(v_modem_t* _modem){
     modem_impl_t* this = _modem;
     if(!this){
         return NULL;
@@ -183,7 +183,7 @@ char* modem_get_buff(modem_t* _modem){
     return this->m_buff;
 }
 
-int32_t modem_send_raw_data(modem_t* _modem, const char* _buff, uint32_t _len, uint32_t _timeout){
+int32_t modem_send_raw_data(v_modem_t* _modem, const char* _buff, uint32_t _len, uint32_t _timeout){
     modem_impl_t* this = _modem;
     if(!this || !this->m_serial){
         LOG_ERR(TAG, "Invalid argument");
@@ -193,7 +193,7 @@ int32_t modem_send_raw_data(modem_t* _modem, const char* _buff, uint32_t _len, u
     return this->m_serial->send(this->m_serial, _buff, _len);
 }
 
-int32_t modem_recv_raw_data(modem_t* _modem, char* _buff, uint32_t _len, uint32_t _timeout){
+int32_t modem_recv_raw_data(v_modem_t* _modem, char* _buff, uint32_t _len, uint32_t _timeout){
     modem_impl_t* this = _modem;
     if(!this || !this->m_serial){
         LOG_ERR(TAG, "Invalid argument");
@@ -203,7 +203,7 @@ int32_t modem_recv_raw_data(modem_t* _modem, char* _buff, uint32_t _len, uint32_
     return this->m_serial->read_blocking(this->m_serial, _buff, _len, _timeout);
 }
 
-int32_t modem_reset_data(modem_t* _modem){
+int32_t modem_reset_data(v_modem_t* _modem){
     modem_impl_t* this = _modem;
     if(!this || !this->m_serial){
         return -1;
@@ -212,7 +212,7 @@ int32_t modem_reset_data(modem_t* _modem){
     return 0;
 }
 
-int32_t modem_restart_module(modem_t* _modem, uint32_t _duration){
+int32_t modem_restart_module(v_modem_t* _modem, uint32_t _duration){
     modem_impl_t* this = _modem;
 
     return 0;
