@@ -306,6 +306,15 @@ gps_gy_IS_TOP_LEVEL:STATIC=OFF
 gps_gy_SOURCE_DIR:STATIC=/home/lekhacvuong/Desktop/my_library/driver/gps_hy_neo6
 
 //Value Computed by CMake
+hc_05_BINARY_DIR:STATIC=/home/lekhacvuong/Desktop/my_library/cmake-build-debug/driver/hc_05_ble
+
+//Value Computed by CMake
+hc_05_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+hc_05_SOURCE_DIR:STATIC=/home/lekhacvuong/Desktop/my_library/driver/hc_05_ble
+
+//Value Computed by CMake
 http-client_BINARY_DIR:STATIC=/home/lekhacvuong/Desktop/my_library/cmake-build-debug/common/http
 
 //Value Computed by CMake
@@ -376,6 +385,15 @@ mqtt_client_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 mqtt_client_SOURCE_DIR:STATIC=/home/lekhacvuong/Desktop/my_library/common/mqtt/mqtt_client
+
+//Value Computed by CMake
+sim_a7680c_BINARY_DIR:STATIC=/home/lekhacvuong/Desktop/my_library/cmake-build-debug/driver/sim_a7680c
+
+//Value Computed by CMake
+sim_a7680c_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+sim_a7680c_SOURCE_DIR:STATIC=/home/lekhacvuong/Desktop/my_library/driver/sim_a7680c
 
 //Value Computed by CMake
 tcp_client_BINARY_DIR:STATIC=/home/lekhacvuong/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_client
@@ -548,7 +566,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

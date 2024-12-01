@@ -94,6 +94,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/driver/sim_a7680c/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/driver/hc_05_ble/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_client/cmake_install.cmake")
 endif()
 

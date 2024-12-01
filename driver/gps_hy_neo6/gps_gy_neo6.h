@@ -7,6 +7,10 @@
 #include "stdint.h"
 #include "v_serial.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef union datetime{
     uint8_t arr_datetime[6];
     struct {
@@ -23,5 +27,8 @@ int32_t gps_gy_create_driver(v_serial_t* _serial);
 
 int32_t gps_gy_process();
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif //LIBS_STORAGE_GPS_GY_NEOS_H

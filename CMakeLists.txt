@@ -4,7 +4,8 @@ project(libs-storage)
 
 set(CMAKE_C_STANDARD 99)
 
-include_directories(utils
+include_directories(
+        utils
         utils/code_c/algorithms
         utils/code_c/timing
         utils/code_c/string
@@ -31,19 +32,29 @@ include_directories(utils
         platform/linux/serial
         platform/linux/timer
 
+        driver/sim_a7680c
+        driver/gps_hy_neo6
+        driver/hc_05_ble
+
         interface
         )
 
 add_subdirectory(utils/code_c)
+
 add_subdirectory(libs/nanoModbus)
 add_subdirectory(libs/host)
 add_subdirectory(libs/MQTT-C)
+
 add_subdirectory(common/modbus/mb_master)
 add_subdirectory(common/modbus/mb_slave)
 add_subdirectory(common/mqtt/mqtt_client)
 add_subdirectory(common/http)
 add_subdirectory(common/modem)
+
 add_subdirectory(driver/gps_hy_neo6)
+add_subdirectory(driver/sim_a7680c)
+add_subdirectory(driver/hc_05_ble)
+
 add_subdirectory(platform/linux/tcp/tcp_client)
 add_subdirectory(platform/linux/tcp/tcp_server)
 add_subdirectory(platform/linux/serial)

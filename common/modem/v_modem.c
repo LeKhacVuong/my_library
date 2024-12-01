@@ -22,6 +22,12 @@ typedef struct{
 
 static modem_impl_t g_modem;
 
+typedef enum{
+    DATA_RAW,
+    DATA_INT,
+    DATA_STRING
+}DATA_TYPE;
+
 v_modem_t* modem_create_default(uint32_t _buffer_len, v_serial_t* _serial){
     g_modem.m_buff_len = 1024;
     g_modem.m_lock = 0;
@@ -61,18 +67,15 @@ int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok,
     int8_t res = -1;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 10);
+        int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 5);
         if(len > 0){
-            cur_index += len;
             if(strstr(this->m_buff, _res_ok) != NULL){
-                LOG_INF(TAG, "Cmd %s ret SUCCEED", _cmd);
-                res = 0;
-                break;
+//                LOG_INF(TAG, "Cmd %s ret SUCCEED", _cmd);
+                return 0;
             }
             if(strstr(this->m_buff, _res_fail) != NULL) {
                 LOG_INF(TAG, "Cmd %s ret FAILED", _cmd);
-                res = -2;
-                break;
+                return -2;
             }
             cur_index += len;
             if(cur_index >= this->m_buff_len){
@@ -80,7 +83,7 @@ int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok,
             }
         }
     }
-
+    LOG_ERR(TAG, "Cmd %s ret TIMEOUT", _cmd);
     return res;
 }
 

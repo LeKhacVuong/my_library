@@ -4,6 +4,7 @@
 #include "sm_logger.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include "time.h"
 
 
 #define RED   "\x1B[31m"
@@ -20,6 +21,7 @@ static const char *log_level_colors[LOG_LEVEL_NUMBER] = {RED,YEL,GRN,RESET, WHT 
 static const char *log_level_names[LOG_LEVEL_NUMBER] = {"ERROR","WARN ", "INFO ", "DEBUG", "TRACE" };
 
 static void logger_put(const char *str){
+
     printf("%s\n", str);
 }
 
@@ -77,9 +79,14 @@ void sm_logger_show(LOG_LEVEL _level, const char* _tag, const char* _log, ...){
         return;
     }
 
+    time_t now = time(NULL);
+    char time_str[32] = {0,};
+
+    strftime(time_str, 32, "%H:%M:%S", localtime(&now));
+
     va_start(args, _log);
 
-    len = snprintf(buf, LOG_BUFFER_SIZE, "%s#%s: %s: ",log_level_colors[_level], log_level_names[_level], _tag);
+    len = snprintf(buf, LOG_BUFFER_SIZE, "%s#%s - %s: %s: ",log_level_colors[_level], time_str, log_level_names[_level], _tag);
     len += vsnprintf(buf + len, LOG_BUFFER_SIZE - len, _log, args);
     va_end(args);
 
