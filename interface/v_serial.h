@@ -21,7 +21,7 @@ struct v_serial{
     int32_t     (*is_open)(v_serial_t*);
     uint32_t    (*bytes_available)(v_serial_t*);
     int32_t     (*flush)(v_serial_t*, SERIAL_DIRECTION dir);
-    int32_t     (*send)(v_serial_t*, char* data, uint32_t len);
+    int32_t     (*send)(v_serial_t*, const char* data, uint32_t len);
     int32_t     (*read)(v_serial_t*, char* buff, uint32_t max_len);
     int32_t     (*read_blocking)(v_serial_t*, char* buff, uint32_t max_len, uint32_t timeout);
 };

@@ -12,6 +12,9 @@
 
 #define TAG "gps"
 
+#define TEST_HOST   "test.mosquitto.org"
+#define TEST_PORT   1883
+
 void my_timer_callback(void* arg){
 //    LOG_INF(TAG, "Timer callback");
 }
@@ -30,31 +33,33 @@ int main(){
         return -1;
     }
 
-    sim_a7680c_init_driver(serial);    sleep(1);
+    sim_a7680c_create_default(serial);    sleep(1);
 
 
     char buffer[512] = {0, };
 
+    sim_a7680c_soft_reset();
+
+    for(int i = 0; i < 20; i++){
+        LOG_INF(TAG, "Wait sim reset done after %d", 20 - i);
+        sleep(1);
+    }
+
+    LOG_INF(TAG, "Done reset module sim");
+
+
+
+    sim_a7860c_start_mqtt_mode();
 
     sleep(1);
 
-    sim_a7680_tcp_set_rx_mode(TCP_RX_AUTO);
+    sim_a7860c_init_mqtt_client(MQTT_CLIENT_0, "vuonglk", MQTT_SERVER_TYPE_TCP);
+
 
     sleep(1);
 
-    sim_a7860c_close_network();
+    sim_a7860c_set_will_msg(MQTT_CLIENT_0, "vuonglk", "is error disconnected", 0);
 
-    sleep(1);
-
-    sim_a7860c_open_network();
-
-    sleep(1);
-
-    sim_a7680_tcp_open(1, "test.mosquitto.org", 1883);
-
-    sleep(1);
-
-    sim_a7860c_get_ip(buffer, 512);
 
     while (1){
 

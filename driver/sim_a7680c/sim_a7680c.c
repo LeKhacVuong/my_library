@@ -72,7 +72,12 @@ static int32_t sim_a7860c_set_value(sim_a7680c_driver_impl_t* this, const char* 
         return -1;
     }
 
-    LOG_INF(TAG, "Set sim key \"%s\" to \"%s\" SUCCEED",_key, _value);
+    if(_type == DATA_STRING){
+        LOG_INF(TAG, "Set sim key \"%s\" to \"%s\" SUCCEED",_key, _value);
+    }else if(_type == DATA_RAW){
+        LOG_INF(TAG, "Set sim key \"%s\" to %s SUCCEED",_key, _value);
+    }
+
     return ret;
 }
 
@@ -107,14 +112,14 @@ static int32_t sim_a7860c_get_value(sim_a7680c_driver_impl_t* this, const char* 
     return ret;
 }
 
-int32_t sim_a7680c_init_driver(v_serial_t* _serial){
+v_sim_a76x_t* sim_a7680c_create_default(v_serial_t* _serial){
     sim_a7680c_driver_impl_t* this = &g_instance;
 
     this->m_modem = modem_create_default(LTE_BUFFER_LENGTH, _serial);
     if(!this->m_modem){
-        return -1;
+        return NULL;
     }
-    return 0;
+    return this;
 }
 
 int32_t sim_a7680c_check_connect(){
@@ -269,19 +274,78 @@ int32_t sim_a7860c_start_mqtt_mode(){
     if(!this->m_modem){
         return -1;
     }
-    return sim_a7860c_send_cmd(this, "AT+CMQTTSTART", 1000);
+    return sim_a7860c_send_cmd(this, "CMQTTSTART", 1000);
 }
+
 
 int32_t sim_a7860c_stop_mqtt_mode(){
     sim_a7680c_driver_impl_t* this = &g_instance;
     if(!this->m_modem){
         return -1;
     }
-    return sim_a7860c_send_cmd(this, "AT+CMQTTSTOP", 1000);
+    return sim_a7860c_send_cmd(this, "CMQTTSTOP", 1000);
 }
 
+int32_t sim_a7860c_init_mqtt_client(MQTT_CLIENT_ID _client_id, const char* _client_name, MQTT_SERVER_TYPE _server_type){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    if(!this->m_modem || _client_id >= MQTT_CLIENT_ID_NUMBER || _server_type >= MQTT_SERVER_TYPE_NUMBER){
+        return -1;
+    }
+
+    char value[LTE_BUFFER_LENGTH] = {0,};
+    snprintf(value, LTE_BUFFER_LENGTH, "%d,\"%s\",%d", _client_id, _client_name, _server_type);
+
+    return sim_a7860c_set_value(this, "CMQTTACCQ", DATA_RAW, value, 1000);
+}
+
+int32_t sim_a7860c_set_will_msg(MQTT_CLIENT_ID _client_id, const char* _topic, const char* _msg, uint8_t _qos){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    if(!this->m_modem || _client_id >= MQTT_CLIENT_ID_NUMBER || _qos > 2){
+        return -1;
+    }
+
+    int ret = -1;
+
+    char value[LTE_BUFFER_LENGTH] = {0,};
 
 
+
+    snprintf(value, LTE_BUFFER_LENGTH, "AT+CMQTTWILLTOPIC=%d,%ld\r\n", _client_id, strlen(_topic));
+
+    ret = modem_send_cmd(this->m_modem, value, ">\r\n", FAIL_RES, 500);
+    if(ret < 0){
+        LOG_ERR(TAG, "Set will topic header FAILED");
+        return -1;
+    }
+    memset(value, 0, LTE_BUFFER_LENGTH);
+    snprintf(value, LTE_BUFFER_LENGTH, "%s\r\n", _topic);
+    ret = modem_send_cmd(this->m_modem, value, SUCCESS_RES, FAIL_RES, 500);
+    if(ret < 0){
+        LOG_ERR(TAG, "Set will topic data FAILED");
+        return -1;
+    }
+
+    LOG_INF(TAG, "Set will topic: \"%s\" SUCCEED", _topic);
+
+
+    memset(value, 0, LTE_BUFFER_LENGTH);
+    snprintf(value, LTE_BUFFER_LENGTH, "AT+CMQTTWILLMSG=%d,%ld,%d\r\n", _client_id, strlen(_msg), _qos);
+    ret = modem_send_cmd(this->m_modem, value, ">\r\n", FAIL_RES, 500);
+    if(ret < 0){
+        LOG_ERR(TAG, "Set will msg header FAILED");
+        return -1;
+    }
+    memset(value, 0, LTE_BUFFER_LENGTH);
+    snprintf(value, LTE_BUFFER_LENGTH, "%s\r\n", _msg);
+    ret = modem_send_cmd(this->m_modem, value, SUCCESS_RES, FAIL_RES, 500);
+    if(ret < 0){
+        LOG_ERR(TAG, "Set will msg data FAILED");
+        return -1;
+    }
+
+    LOG_INF(TAG, "Set will msg: \"%s\" SUCCEED", _msg);
+    return 0;
+}
 
 
 /*************************************** MQTT COMMANDS ************************************/

@@ -162,7 +162,7 @@ static int32_t unix_flush(v_serial_t* _this, SERIAL_DIRECTION _dir){
     return 0;
 }
 
-static int32_t unix_serial_send(v_serial_t* _this, char* _data, uint32_t _len){
+static int32_t unix_serial_send(v_serial_t* _this, const char* _data, uint32_t _len){
     unix_serial_impl_t* this = (unix_serial_impl_t*)_this;
     if(!this){
         return -1;

@@ -19,9 +19,11 @@ typedef enum {
     TCP_RX_MODE_NUMBER
 }TCP_RX_MODE;
 
+typedef void v_sim_a76x_t;
+
 /*************************************** GENERAL COMMANDS ************************************/
 
-int32_t sim_a7680c_init_driver(v_serial_t* _serial);
+v_sim_a76x_t* sim_a7680c_create_default(v_serial_t* _serial);
 
 int32_t sim_a7680c_check_connect();
 
@@ -55,10 +57,28 @@ int32_t sim_a7680_tcp_close(uint8_t _tcp_link_id);
 
 /*************************************** MQTT COMMANDS ************************************/
 
-int32_t sim_a7860c_start_mqtt_mode();
+typedef enum {
+    MQTT_CLIENT_0,
+    MQTT_CLIENT_1,
+    MQTT_CLIENT_ID_NUMBER
+}MQTT_CLIENT_ID;
+
+typedef enum {
+    MQTT_SERVER_TYPE_TCP,
+    MQTT_SERVER_TYPE_SSL,
+    MQTT_SERVER_TYPE_NUMBER
+}MQTT_SERVER_TYPE;
+
+#define MQTT_CLIENT_ID_0
+#define MQTT_CLIENT_ID_1
+
+int32_t sim_a7860c_start_mqtt_mode();  //Step 1
 
 int32_t sim_a7860c_stop_mqtt_mode();
 
+int32_t sim_a7860c_init_mqtt_client(MQTT_CLIENT_ID _client_id, const char* _client_name, MQTT_SERVER_TYPE _server_type); // Support ID 0 or 1
+
+int32_t sim_a7860c_set_will_msg(MQTT_CLIENT_ID _client_id, const char* _topic, const char* _msg, uint8_t _qos);         // Set before connect
 
 #ifdef __cplusplus
 }
