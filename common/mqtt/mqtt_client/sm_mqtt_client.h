@@ -19,13 +19,20 @@ typedef struct sm_mqtt_client_connection_info{
 
 typedef void sm_mqtt_client_t;
 
-sm_mqtt_client_t* sm_mqtt_client_create(sm_mqtt_client_connection_info_t _info, publish_response_callback _cb);
+sm_mqtt_client_t* sm_mqtt_client_create(sm_mqtt_client_connection_info_t _info,
+                                        publish_response_callback
+                                        _cb);
 
-int32_t sm_mqtt_client_subscribe(sm_mqtt_client_t* _this, const char* _topic);
+int32_t sm_mqtt_client_subscribe(sm_mqtt_client_t* _this,
+                                 const char* _topic);
 
-int32_t sm_mqtt_client_unsubcribe(sm_mqtt_client_t* _this, const char* _topic);
+int32_t sm_mqtt_client_unsubcribe(sm_mqtt_client_t* _this,
+                                  const char* _topic);
 
-int32_t sm_mqtt_client_publish(sm_mqtt_client_t* _this, const char* _topic, const char* _data, uint32_t _len);
+int32_t sm_mqtt_client_publish(sm_mqtt_client_t* _this,
+                               const char* _topic,
+                               const char* _data,
+                               uint32_t _len);
 
 int32_t sm_mqtt_client_disconnect(sm_mqtt_client_t* _this);
 

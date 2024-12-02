@@ -4,6 +4,8 @@
 
 #ifndef LIBS_STORAGE_GPS_GY_NEOS_H
 #define LIBS_STORAGE_GPS_GY_NEOS_H
+
+#include <stdbool.h>
 #include "stdint.h"
 #include "v_serial.h"
 
@@ -57,6 +59,15 @@ int32_t sim_a7680_tcp_close(uint8_t _tcp_link_id);
 
 /*************************************** MQTT COMMANDS ************************************/
 
+typedef struct {
+    char*       host;
+    int         port;
+    char*       user_name;
+    char*       user_password;
+    bool        clean_section;
+    uint32_t    keep_alive;
+}mqtt_client_info_t;
+
 typedef enum {
     MQTT_CLIENT_0,
     MQTT_CLIENT_1,
@@ -76,9 +87,25 @@ int32_t sim_a7860c_start_mqtt_mode();  //Step 1
 
 int32_t sim_a7860c_stop_mqtt_mode();
 
-int32_t sim_a7860c_init_mqtt_client(MQTT_CLIENT_ID _client_id, const char* _client_name, MQTT_SERVER_TYPE _server_type); // Support ID 0 or 1
+int32_t sim_a7860c_init_mqtt_client(MQTT_CLIENT_ID _client_id,
+                                    const char* _client_name,
+                                    MQTT_SERVER_TYPE _server_type); // Support ID 0 or 1
 
-int32_t sim_a7860c_set_will_msg(MQTT_CLIENT_ID _client_id, const char* _topic, const char* _msg, uint8_t _qos);         // Set before connect
+int32_t sim_a7860c_set_will_msg(MQTT_CLIENT_ID _client_id,
+                                const char* _topic,
+                                const char* _msg,
+                                uint8_t _qos);         // Set before connect
+
+int32_t sim_a7860c_connect(MQTT_CLIENT_ID _client_id,
+                           mqtt_client_info_t _info);
+
+int32_t sim_a7860c_check_connection(MQTT_CLIENT_ID _client_id);
+
+
+int32_t sim_a7860c_disconnect(MQTT_CLIENT_ID _client_id, uint32_t _timeout);
+
+int32_t sim_a7860c_subscribe(MQTT_CLIENT_ID _client_id, const char* _topic, uint8_t _qos);
+
 
 #ifdef __cplusplus
 }

@@ -61,9 +61,21 @@ int main(){
     sim_a7860c_set_will_msg(MQTT_CLIENT_0, "vuonglk", "is error disconnected", 0);
 
 
+    mqtt_client_info_t info = {
+            .host = "broker.emqx.io",
+            .port = 1883,
+            .keep_alive = 600,
+            .clean_section = true
+    };
+
+    sim_a7860c_connect(MQTT_CLIENT_0, info);
+
+    sleep(3);
+
+    sim_a7860c_subscribe(MQTT_CLIENT_0, "hello_vuong", 0);
+
     while (1){
 
-        sleep(5);
         memset(buffer, 0, 512);
     }
 }

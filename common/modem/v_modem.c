@@ -80,7 +80,7 @@ int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok,
         int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 5);
         if(len > 0){
             if(strstr(this->m_buff, _res_ok) != NULL){
-//                LOG_INF(TAG, "Cmd %s ret SUCCEED", _cmd);
+                LOG_INF(TAG, "Cmd %s ret SUCCEED", _cmd);
                 return 0;
             }
             if(strstr(this->m_buff, _res_fail) != NULL) {
