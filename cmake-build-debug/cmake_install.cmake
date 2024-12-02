@@ -1,4 +1,4 @@
-# Install script for directory: /home/lekhacvuong/Desktop/my_library
+# Install script for directory: /home/vuonglk/Desktop/my_library
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,82 +44,82 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/utils/code_c/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/utils/code_c/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/libs/nanoModbus/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/libs/nanoModbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/libs/host/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/libs/host/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/libs/MQTT-C/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/libs/MQTT-C/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/common/modbus/mb_master/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/common/modbus/mb_master/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/common/modbus/mb_slave/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/common/modbus/mb_slave/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/common/mqtt/mqtt_client/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/common/mqtt/mqtt_client/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/common/http/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/common/http/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/common/modem/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/common/modem/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/driver/gps_hy_neo6/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/driver/sim_a7680c/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/driver/sim_a7680c/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/driver/hc_05_ble/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/driver/hc_05_ble/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_client/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_client/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_server/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/tcp/tcp_server/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/platform/linux/serial/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/serial/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lekhacvuong/Desktop/my_library/cmake-build-debug/platform/linux/timer/cmake_install.cmake")
+  include("/home/vuonglk/Desktop/my_library/cmake-build-debug/platform/linux/timer/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -137,6 +137,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/home/lekhacvuong/Desktop/my_library/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/vuonglk/Desktop/my_library/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

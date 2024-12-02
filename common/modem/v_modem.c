@@ -29,13 +29,21 @@ typedef enum{
 }DATA_TYPE;
 
 v_modem_t* modem_create_default(uint32_t _buffer_len, v_serial_t* _serial){
+    if(!_serial){
+        return NULL;
+    }
     g_modem.m_buff_len = 1024;
     g_modem.m_lock = 0;
     g_modem.m_serial = _serial;
+    g_modem.m_serial->flush(g_modem.m_serial, SERIAL_TX_RX);
     return &g_modem;
 }
 
 v_modem_t* modem_create(uint32_t _buffer_len, v_serial_t* _serial){
+    if(!_serial){
+        return NULL;
+    }
+
     modem_impl_t* this = malloc(sizeof(modem_impl_t));
     if(!this){
         LOG_ERR(TAG, "Over heap for modem instance!!");
@@ -44,6 +52,7 @@ v_modem_t* modem_create(uint32_t _buffer_len, v_serial_t* _serial){
     this->m_buff_len = 1024;
     this->m_lock = 0;
     this->m_serial = _serial;
+    this->m_serial->flush(this->m_serial, SERIAL_TX_RX);
     return this;
 }
 
@@ -54,6 +63,7 @@ int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok,
         return -1;
     }
     v_serial_t* serial = this->m_serial;
+    serial->flush(serial, SERIAL_TX_RX);
 
     if(serial->send(serial, _cmd, strlen(_cmd)) < 0){
         LOG_ERR(TAG, "Send cmd FAILED");
