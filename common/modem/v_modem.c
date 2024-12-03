@@ -16,7 +16,7 @@
 typedef struct{
     uint32_t m_buff_len;
     v_serial_t* m_serial;
-    char m_buff[1024];
+    char m_buff[2048];
     volatile uint8_t m_lock; ///TODO later
 }modem_impl_t;
 
@@ -73,23 +73,25 @@ int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok,
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
-    int32_t cur_index = 0;
+    int32_t cur_len = 0;
     int8_t res = -1;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 5);
+        int32_t len = serial->read_blocking(serial, this->m_buff + cur_len, this->m_buff_len - cur_len, 5);
         if(len > 0){
-            if(strstr(this->m_buff, _res_ok) != NULL){
-                LOG_INF(TAG, "Cmd %s ret SUCCEED", _cmd);
-                return 0;
-            }
-            if(strstr(this->m_buff, _res_fail) != NULL) {
-                LOG_INF(TAG, "Cmd %s ret FAILED", _cmd);
-                return -2;
-            }
-            cur_index += len;
-            if(cur_index >= this->m_buff_len){
+            cur_len += len;
+            if(cur_len >= this->m_buff_len){
                 return -1;
+            }
+            if(this->m_buff[cur_len-1] == '\n'){
+                if(strstr(this->m_buff, _res_ok) != NULL){
+//                LOG_INF(TAG, "Cmd %s ret SUCCEED", _cmd);
+                    return 0;
+                }
+                if(strstr(this->m_buff, _res_fail) != NULL) {
+                    LOG_INF(TAG, "Cmd %s ret FAILED", _cmd);
+                    return -2;
+                }
             }
         }
     }
@@ -109,19 +111,19 @@ int32_t modem_read_until_char(v_modem_t* _modem, char _ch, char* _buff, uint32_t
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
-    int32_t cur_index = 0;
+    int32_t cur_len = 0;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, 1, 0);
+        int32_t len = serial->read_blocking(serial, this->m_buff + cur_len, 1, 0);
         if(len > 0){
-            if(this->m_buff[cur_index] == _ch){
-                uint32_t true_len = v_min_off(cur_index + 1, _max_len);
+            cur_len += 1;
+            if(cur_len >= this->m_buff_len){
+                return -1;
+            }
+            if(this->m_buff[cur_len-1] == _ch){
+                uint32_t true_len = v_min_off(cur_len + 1, _max_len);
                 memcpy(_buff, this->m_buff, true_len); //End of string '\0'
                 return true_len;
-            }
-            cur_index += 1;
-            if(cur_index >= this->m_buff_len){
-                return -1;
             }
         }
     }
@@ -141,19 +143,19 @@ int32_t modem_read_until_string(v_modem_t* _modem, const char* _str, char* _buff
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
-    int32_t cur_index = 0;
+    int32_t cur_len = 0;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        int32_t len = serial->read(serial, this->m_buff + cur_index, 1);
+        int32_t len = serial->read(serial, this->m_buff + cur_len, 1);
         if(len > 0){
+            cur_len += len;
+            if(cur_len >= this->m_buff_len){
+                return -1;
+            }
             if(strstr(this->m_buff, _str)){
-                uint32_t true_len = v_min_off(cur_index + 1, _max_len);
+                uint32_t true_len = v_min_off(cur_len + 1, _max_len);
                 memcpy(_buff, this->m_buff, true_len); //End of string '\0'
                 return true_len;
-            }
-            cur_index += len;
-            if(cur_index >= this->m_buff_len){
-                return -1;
             }
         }
     }
@@ -172,12 +174,12 @@ char* modem_polling_data_stringz(v_modem_t* _modem, const char* _start, uint32_t
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
-    int32_t cur_index = 0;
+    int32_t cur_len = 0;
 
     while (elapsed_timer_get_remain(&wait_timeout)){
-        int32_t len = serial->read_blocking(serial, this->m_buff + cur_index, this->m_buff_len - cur_index, 10);
+        int32_t len = serial->read_blocking(serial, this->m_buff + cur_len, this->m_buff_len - cur_len, 10);
         if(len > 0){
-            cur_index += len;
+            cur_len += len;
             const char* data = strstr(this->m_buff, _start);
             if(data != NULL){
                 LOG_INF(TAG, "Polling data %s ret SUCCEED, data: %s", _start, data);

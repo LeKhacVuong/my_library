@@ -87,25 +87,30 @@ int32_t sim_a7860c_start_mqtt_mode();  //Step 1
 
 int32_t sim_a7860c_stop_mqtt_mode();
 
-int32_t sim_a7860c_init_mqtt_client(MQTT_CLIENT_ID _client_id,
+int32_t sim_a7860c_mqtt_init_client(MQTT_CLIENT_ID _client_id,
                                     const char* _client_name,
                                     MQTT_SERVER_TYPE _server_type); // Support ID 0 or 1
 
-int32_t sim_a7860c_set_will_msg(MQTT_CLIENT_ID _client_id,
+int32_t sim_a7860c_mqtt_set_will_msg(MQTT_CLIENT_ID _client_id,
+                                     const char* _topic,
+                                     const char* _msg,
+                                     uint8_t _qos);         // Set before connect
+
+int32_t sim_a7860c_mqtt_connect(MQTT_CLIENT_ID _client_id,
+                                mqtt_client_info_t _info);
+
+int32_t sim_a7860c_mqtt_check_connect(MQTT_CLIENT_ID _client_id);
+
+
+int32_t sim_a7860c_mqtt_disconnect(MQTT_CLIENT_ID _client_id, uint32_t _timeout);
+
+int32_t sim_a7860c_mqtt_subscribe(MQTT_CLIENT_ID _client_id, const char* _topic, uint8_t _qos);
+
+int32_t sim_a7860c_mqtt_publish(MQTT_CLIENT_ID _client_id,
                                 const char* _topic,
-                                const char* _msg,
-                                uint8_t _qos);         // Set before connect
-
-int32_t sim_a7860c_connect(MQTT_CLIENT_ID _client_id,
-                           mqtt_client_info_t _info);
-
-int32_t sim_a7860c_check_connection(MQTT_CLIENT_ID _client_id);
-
-
-int32_t sim_a7860c_disconnect(MQTT_CLIENT_ID _client_id, uint32_t _timeout);
-
-int32_t sim_a7860c_subscribe(MQTT_CLIENT_ID _client_id, const char* _topic, uint8_t _qos);
-
+                                const char* _payload,
+                                uint8_t _qos,
+                                uint32_t _timeout);
 
 #ifdef __cplusplus
 }

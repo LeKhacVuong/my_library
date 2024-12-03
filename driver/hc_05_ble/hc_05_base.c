@@ -27,8 +27,8 @@ typedef struct {
 #define GET_ROLE    "AT+ROLE?\r\n"
 #define SET_ROLE    "AT+ROLE=%d\r\n"
 
-#define SUCCESS_RES     "OK\r\n"
-#define FAIL_RES        "ERROR:\r\n"
+#define OK_RES     "OK\r\n"
+#define ERROR_RES        "ERROR:\r\n"
 
 #define FAIL_RES_FORM   "ERROR:(%d)\r\n"
 
@@ -57,7 +57,7 @@ static int32_t hc_05_set_value(hc_05_impl_t* this, const char* _key, const char*
     }else{
         snprintf(buff, HC_05_BUFF_LEN, "AT+%s\r\n", _key);
     }
-    ret = modem_send_cmd(this->m_modem, buff, SUCCESS_RES, FAIL_RES, 500);
+    ret = modem_send_cmd(this->m_modem, buff, OK_RES, ERROR_RES, 500);
     if(ret < 0){
         int ret_code = -1;
         sscanf(modem_get_buff(this->m_modem), FAIL_RES_FORM, &ret_code);
@@ -79,7 +79,7 @@ static int32_t hc_05_get_value(hc_05_impl_t* this, const char* _key, char* _buff
 
     char buff[HC_05_BUFF_LEN] = {0,};
     snprintf(buff, HC_05_BUFF_LEN, "AT+%s?\r\n", _key);
-    ret = modem_send_cmd(this->m_modem, buff, SUCCESS_RES, FAIL_RES, 500);
+    ret = modem_send_cmd(this->m_modem, buff, OK_RES, ERROR_RES, 500);
     if(ret < 0){
         int ret_code = -1;
         sscanf(modem_get_buff(this->m_modem), FAIL_RES_FORM, &ret_code);

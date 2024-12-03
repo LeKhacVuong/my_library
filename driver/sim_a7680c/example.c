@@ -35,7 +35,6 @@ int main(){
 
     sim_a7680c_create_default(serial);    sleep(1);
 
-
     char buffer[512] = {0, };
 
     sim_a7680c_soft_reset();
@@ -53,29 +52,32 @@ int main(){
 
     sleep(1);
 
-    sim_a7860c_init_mqtt_client(MQTT_CLIENT_0, "vuonglk", MQTT_SERVER_TYPE_TCP);
+    sim_a7860c_mqtt_init_client(MQTT_CLIENT_0, "vuonglk", MQTT_SERVER_TYPE_TCP);
 
 
     sleep(1);
 
-    sim_a7860c_set_will_msg(MQTT_CLIENT_0, "vuonglk", "is error disconnected", 0);
+    sim_a7860c_mqtt_set_will_msg(MQTT_CLIENT_0, "vuonglk123", "is error disconnected", 0);
 
 
     mqtt_client_info_t info = {
-            .host = "broker.emqx.io",
+            .host = "test.mosquitto.org",
             .port = 1883,
             .keep_alive = 600,
             .clean_section = true
     };
 
-    sim_a7860c_connect(MQTT_CLIENT_0, info);
+    sim_a7860c_mqtt_connect(MQTT_CLIENT_0, info);
 
     sleep(3);
 
-    sim_a7860c_subscribe(MQTT_CLIENT_0, "hello_vuong", 0);
+    sim_a7860c_mqtt_subscribe(MQTT_CLIENT_0, "hello_vuong", 0);
+
+    sleep(5);
 
     while (1){
+        sim_a7860c_mqtt_publish(MQTT_CLIENT_0, "vuonglk_topic", "vuonglk_msg_test", 1, 60);
 
-        memset(buffer, 0, 512);
+        sleep(5);
     }
 }
