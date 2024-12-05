@@ -32,6 +32,8 @@ int32_t modem_send_raw_data(v_modem_t* _modem, const char* _buff, uint32_t _len,
 
 int32_t modem_recv_raw_data(v_modem_t* _modem, char* _buff, uint32_t _len, uint32_t _timeout);
 
+uint32_t modem_get_recv_byte_available(v_modem_t* _modem);
+
 int32_t modem_reset_data(v_modem_t* _modem);
 
 int32_t modem_restart_module(v_modem_t* _modem, uint32_t _duration);

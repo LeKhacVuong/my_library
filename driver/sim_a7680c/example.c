@@ -15,8 +15,17 @@
 #define TEST_HOST   "test.mosquitto.org"
 #define TEST_PORT   1883
 
-void my_timer_callback(void* arg){
-//    LOG_INF(TAG, "Timer callback");
+
+void my_timer_1ms_callback(void* arg){
+
+}
+
+void my_msg_coming_cb(MQTT_CLIENT_ID id,
+                      const char* topic,
+                      const char* payload,
+                      uint32_t payload_len,
+                      void* arg){
+    LOG_INF(TAG, "User recv msg - client id: %d, topic: %s, payload: %s", id, topic, payload);
 }
 
 int main(){
@@ -24,7 +33,7 @@ int main(){
     sm_logger_init(0, LOG_LEVEL_INFO);
     LOG_INF(TAG, "Start app test gps");
 
-    v_timer_t* timer = v_timer_create(1000, my_timer_callback, 0);
+    v_timer_t* timer = v_timer_create(1000, my_timer_1ms_callback, 0);
 
     v_serial_t* serial = unix_serial_create(UNIX_COM_0, 115200, UNIX_SERIAL_MODE_NONE_BLOCKING);
 
@@ -37,6 +46,14 @@ int main(){
 
     char buffer[512] = {0, };
 
+    sim_a7868c_mqtt_callback_t mqtt_cb = {
+            .msg_coming_cb = my_msg_coming_cb,
+            .arg = NULL
+    };
+
+    sim_a7860c_reg_msg_coming_callback(mqtt_cb);
+
+
     sim_a7680c_soft_reset();
 
     for(int i = 0; i < 20; i++){
@@ -46,14 +63,11 @@ int main(){
 
     LOG_INF(TAG, "Done reset module sim");
 
-
-
     sim_a7860c_start_mqtt_mode();
 
     sleep(1);
 
     sim_a7860c_mqtt_init_client(MQTT_CLIENT_0, "vuonglk", MQTT_SERVER_TYPE_TCP);
-
 
     sleep(1);
 
@@ -73,11 +87,7 @@ int main(){
 
     sim_a7860c_mqtt_subscribe(MQTT_CLIENT_0, "hello_vuong", 0);
 
-    sleep(5);
-
     while (1){
-        sim_a7860c_mqtt_publish(MQTT_CLIENT_0, "vuonglk_topic", "vuonglk_msg_test", 1, 60);
-
-        sleep(5);
+        sim_a7860c_mqtt_polling();
     }
 }

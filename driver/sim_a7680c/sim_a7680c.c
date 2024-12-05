@@ -7,13 +7,14 @@
 #include "sim_a7680c.h"
 #include "v_modem.h"
 #include "sm_logger.h"
-
+#include "elapsed_timer.h"
 
 #include "v_math.h"
 
 #define TAG "sim_a7680c"
 
-#define LTE_BUFFER_LENGTH 1024
+#define LTE_BUFFER_LENGTH 2048
+#define TIMEOUT_POLL_MSG  500
 
 #define OK_RES     "OK\r\n"
 #define ERROR_RES        "ERROR"
@@ -23,6 +24,11 @@
 typedef struct{
     v_modem_t* m_modem;
     char m_buffer[LTE_BUFFER_LENGTH];
+
+    struct{
+        sim_a7868c_mqtt_callback_t m_cb;
+        void* m_arg;
+    }m_mqtt;
 }sim_a7680c_driver_impl_t;
 
 typedef enum {
@@ -385,6 +391,11 @@ int32_t sim_a7860c_stop_mqtt_mode(){
     return sim_a7860c_send_cmd(this, "CMQTTSTOP", 1000);
 }
 
+int32_t sim_a7860c_reg_msg_coming_callback(sim_a7868c_mqtt_callback_t _cb){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    this->m_mqtt.m_cb = _cb;
+}
+
 int32_t sim_a7860c_mqtt_init_client(MQTT_CLIENT_ID _client_id, const char* _client_name, MQTT_SERVER_TYPE _server_type){
     sim_a7680c_driver_impl_t* this = &g_instance;
     if(!this->m_modem || _client_id >= MQTT_CLIENT_ID_NUMBER || _server_type >= MQTT_SERVER_TYPE_NUMBER){
@@ -492,6 +503,24 @@ int32_t sim_a7860c_mqtt_subscribe(MQTT_CLIENT_ID _client_id, const char* _topic,
                                                       "CMQTTSUB", value, _topic, 5000);
 }
 
+int32_t sim_a7860c_mqtt_unsubscribe(MQTT_CLIENT_ID _client_id, const char* _topic){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    if(!this->m_modem || _client_id >= MQTT_CLIENT_ID_NUMBER){
+        return -1;
+    }
+
+    char value[LTE_BUFFER_LENGTH] = {0,};
+    snprintf(value, LTE_BUFFER_LENGTH, "%d,%ld", _client_id, strlen(_topic));
+
+
+    sim_a7860c_set_mqtt_value_with_fill_header(RES_TYPE_OK, _client_id,
+                                                      "CMQTTUNSUBTOPIC", value, _topic, 1000);
+
+    return sim_a7860c_set_mqtt_value(RES_TYPE_ECHO, _client_id,
+                                                      "CMQTTUNSUB", value, 5000);
+}
+
+
 int32_t sim_a7860c_mqtt_publish(MQTT_CLIENT_ID _client_id,
                                 const char* _topic,
                                 const char* _payload,
@@ -531,4 +560,88 @@ int32_t sim_a7860c_mqtt_publish(MQTT_CLIENT_ID _client_id,
     snprintf(value, LTE_BUFFER_LENGTH, "%d,%d,%d", _client_id, _qos, _timeout);
 
     return sim_a7860c_set_mqtt_value(RES_TYPE_ECHO, _client_id, "CMQTTPUB", value, 5000);
+}
+
+static int32_t parser_mqtt_subscribed_msg(sim_a7680c_driver_impl_t* this){
+    char* p_topic = NULL;
+    char* p_payload = NULL;
+    int mqtt_client_id = 0;
+    int payload_len = 0;
+    int topic_len = 0;
+    int ret = 0;
+
+    char* token = strstr(this->m_buffer, "+CMQTTRXSTART:");
+    if(!token){
+        LOG_ERR(TAG, "Data missing header field");
+        return -1;
+    }
+
+    ret = sscanf(token, "+CMQTTRXSTART: %d,%d,%d\r\n", &mqtt_client_id, &topic_len, &payload_len);
+
+    if(ret != 3){
+        LOG_ERR(TAG, "Header missing info field");
+        return -1;
+    }
+
+    LOG_INF(TAG, "Parse msg header - id: %d, topic len: %d, payload len: %d", mqtt_client_id, topic_len, payload_len);
+
+    p_payload = strstr(this->m_buffer, "+CMQTTRXPAYLOAD:");
+    p_topic = strstr(this->m_buffer, "+CMQTTRXTOPIC:");
+    if(!p_topic){
+        LOG_ERR(TAG, "Data missing topic field");
+        return -1;
+    }
+
+    p_topic = strtok(p_topic, "\n");
+    p_topic = strtok(NULL, "\n");
+    p_topic = strtok(NULL, "\r");
+    LOG_INF(TAG, "Parsed topic: %s", p_topic);
+
+    if(!p_payload){
+        LOG_ERR(TAG, "This msg not include payload field");
+    }else{
+        p_payload = strtok(p_payload, "\n");
+        p_payload = strtok(NULL, "\n");
+        p_payload = strtok(NULL, "\r");
+        LOG_INF(TAG, "Parsed msg: %s", p_topic);
+    }
+    if(this->m_mqtt.m_cb.msg_coming_cb){
+        this->m_mqtt.m_cb.msg_coming_cb(mqtt_client_id, p_topic, p_payload, payload_len, this->m_mqtt.m_arg);
+    }
+    return 1;
+}
+
+int32_t sim_a7860c_mqtt_polling(){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    if(!this->m_modem){
+        return -1;
+    }
+
+    int ret = -1;
+
+    if(modem_get_recv_byte_available(this->m_modem) <= 0){
+        return 0;
+    }
+
+    memset(this->m_buffer, 0, LTE_BUFFER_LENGTH);
+    ret = modem_read_until_string(this->m_modem, END_OF_LINE, this->m_buffer, LTE_BUFFER_LENGTH, 10);
+    if(ret > 0){
+        LOG_INF(TAG, "Load a payload %d byte", ret);
+        if(strstr(this->m_buffer, "+CMQTTRXSTART:")){
+            LOG_INF(TAG, "Start parse a subscribed msg");
+            uint32_t time_end = get_tick_count() + TIMEOUT_POLL_MSG;
+            while(time_end > get_tick_count()){
+                modem_read_until_string(this->m_modem, END_OF_LINE,
+                                              this->m_buffer + strlen(this->m_buffer),
+                                              LTE_BUFFER_LENGTH - strlen(this->m_buffer), TIMEOUT_POLL_MSG);
+
+                if(strstr(this->m_buffer, "+CMQTTRXEND:")){
+                    LOG_INF(TAG, "Parsed SUCCEED a subscribed msg");
+                    parser_mqtt_subscribed_msg(this);
+                    break;
+                }
+            }
+        }
+    }
+    return 0;
 }

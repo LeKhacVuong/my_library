@@ -218,6 +218,16 @@ int32_t modem_recv_raw_data(v_modem_t* _modem, char* _buff, uint32_t _len, uint3
     return this->m_serial->read_blocking(this->m_serial, _buff, _len, _timeout);
 }
 
+uint32_t modem_get_recv_byte_available(v_modem_t* _modem){
+    modem_impl_t* this = _modem;
+    if(!this || !this->m_serial){
+        LOG_ERR(TAG, "Invalid argument");
+        return -1;
+    }
+
+    return this->m_serial->bytes_available(this->m_serial);
+}
+
 int32_t modem_reset_data(v_modem_t* _modem){
     modem_impl_t* this = _modem;
     if(!this || !this->m_serial){

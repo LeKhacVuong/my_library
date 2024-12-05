@@ -80,12 +80,25 @@ typedef enum {
     MQTT_SERVER_TYPE_NUMBER
 }MQTT_SERVER_TYPE;
 
+
+
+typedef struct {
+    void (*msg_coming_cb)(MQTT_CLIENT_ID id,
+                                       const char* topic,
+                                       const char* payload,
+                                       uint32_t payload_len,
+                                       void* arg);
+    void* arg;
+}sim_a7868c_mqtt_callback_t;
+
 #define MQTT_CLIENT_ID_0
 #define MQTT_CLIENT_ID_1
 
 int32_t sim_a7860c_start_mqtt_mode();  //Step 1
 
 int32_t sim_a7860c_stop_mqtt_mode();
+
+int32_t sim_a7860c_reg_msg_coming_callback(sim_a7868c_mqtt_callback_t _cb);
 
 int32_t sim_a7860c_mqtt_init_client(MQTT_CLIENT_ID _client_id,
                                     const char* _client_name,
@@ -101,16 +114,19 @@ int32_t sim_a7860c_mqtt_connect(MQTT_CLIENT_ID _client_id,
 
 int32_t sim_a7860c_mqtt_check_connect(MQTT_CLIENT_ID _client_id);
 
-
 int32_t sim_a7860c_mqtt_disconnect(MQTT_CLIENT_ID _client_id, uint32_t _timeout);
 
 int32_t sim_a7860c_mqtt_subscribe(MQTT_CLIENT_ID _client_id, const char* _topic, uint8_t _qos);
+
+int32_t sim_a7860c_mqtt_unsubscribe(MQTT_CLIENT_ID _client_id, const char* _topic);
 
 int32_t sim_a7860c_mqtt_publish(MQTT_CLIENT_ID _client_id,
                                 const char* _topic,
                                 const char* _payload,
                                 uint8_t _qos,
                                 uint32_t _timeout);
+
+int32_t sim_a7860c_mqtt_polling();
 
 #ifdef __cplusplus
 }

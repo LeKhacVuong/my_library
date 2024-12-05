@@ -13,6 +13,7 @@
 #include <errno.h>
 #include "stdio.h"
 #include "sm_logger.h"
+#include "elapsed_timer.h"
 
 #define TAG "unix_serial"
 
@@ -193,19 +194,20 @@ static int32_t unix_serial_read_blocking(v_serial_t* _this, char* _buff, uint32_
     if(this->m_fd < 0){
         return -1;
     }
-    fd_set set;
-    struct timeval timeout = {
-            .tv_sec = _timeout/1000,
-            .tv_usec = (_timeout%1000)*1000
-    };
-    FD_ZERO(&set);       //clear the set
-    FD_SET(this->m_fd, &set);   //add our file descriptor to the set
 
-    int ret = select(this->m_fd + 1, &set, NULL, NULL, &timeout);
-    if(ret > 0){
-        return (int32_t)read( this->m_fd, _buff, _max_len );
-    }
-    return ret;
+    uint32_t time_end = get_tick_count() + _timeout;
+    uint32_t len = 0;
+
+    do{
+        len = unix_serial_bytes_available(_this);
+        if(len >= _max_len){
+            break;
+        }
+    } while (time_end > get_tick_count());
+
+    len = (len > _max_len) ? _max_len : len;
+
+    return unix_serial_read(_this, _buff, len);
 }
 
 static int32_t unix_serial_close(v_serial_t* _this){
