@@ -340,7 +340,7 @@ static int32_t sim_a7860c_set_mqtt_value_with_fill_header(MQTT_CMD_RES_TYPE _res
     char value[LTE_BUFFER_LENGTH] = {0,};
     snprintf(value, LTE_BUFFER_LENGTH, "AT+%s=%s\r\n", _key, _header);
 
-    ret = modem_send_cmd(this->m_modem, value, ">\r\n", ERROR_RES, 500);
+    ret = modem_send_cmd(this->m_modem, value, ">\r\n", ERROR_RES, 1500);
     if(ret < 0){
         LOG_ERR(TAG, "Client %d set header of key %s FAILED", _client_id, _key);
         return -1;
@@ -627,7 +627,29 @@ int32_t sim_a7860c_mqtt_polling(){
     ret = modem_read_until_string(this->m_modem, END_OF_LINE, this->m_buffer, LTE_BUFFER_LENGTH, 10);
     if(ret > 0){
         LOG_INF(TAG, "Load a payload %d byte", ret);
-        if(strstr(this->m_buffer, "+CMQTTRXSTART:")){
+
+        char* p_event = strstr(this->m_buffer, "PB DONE\r\n");
+        if(p_event){
+            LOG_INF(TAG, "Module is ready");
+            if(this->m_mqtt.m_cb.module_ready){
+                this->m_mqtt.m_cb.module_ready(this->m_mqtt.m_cb.arg);
+            }
+        }
+
+        p_event = strstr(this->m_buffer, "+CMQTTCONNLOST:");
+        if(p_event){
+            int client_id = 0, cause = 0;
+            if(sscanf(p_event, "+CMQTTCONNLOST: %d,%d", &client_id, &cause) == 2){
+                LOG_INF(TAG, "Client %d is disconnected from server, cause code %d", client_id, cause);
+                if(this->m_mqtt.m_cb.disconnected){
+                    this->m_mqtt.m_cb.disconnected(client_id, this->m_mqtt.m_cb.arg);
+                }
+            }
+
+        }
+
+        p_event = strstr(this->m_buffer, "+CMQTTRXSTART:");
+        if(p_event){
             LOG_INF(TAG, "Start parse a subscribed msg");
             uint32_t time_end = get_tick_count() + TIMEOUT_POLL_MSG;
             while(time_end > get_tick_count()){

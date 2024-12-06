@@ -89,13 +89,13 @@ int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok,
                     return 0;
                 }
                 if(strstr(this->m_buff, _res_fail) != NULL) {
-                    LOG_INF(TAG, "Cmd %s ret FAILED", _cmd);
+                    LOG_ERR(TAG, "Cmd %s ret FAILED: %s", _cmd, this->m_buff);
                     return -2;
                 }
             }
         }
     }
-    LOG_ERR(TAG, "Cmd %s ret TIMEOUT", _cmd);
+    LOG_WRN(TAG, "Cmd %s ret TIMEOUT: ", _cmd, this->m_buff);
     return res;
 }
 
@@ -180,7 +180,7 @@ char* modem_polling_data_stringz(v_modem_t* _modem, const char* _start, uint32_t
         int32_t len = serial->read_blocking(serial, this->m_buff + cur_len, this->m_buff_len - cur_len, 10);
         if(len > 0){
             cur_len += len;
-            const char* data = strstr(this->m_buff, _start);
+            char* data = strstr(this->m_buff, _start);
             if(data != NULL){
                 LOG_INF(TAG, "Polling data %s ret SUCCEED, data: %s", _start, data);
                 return data;

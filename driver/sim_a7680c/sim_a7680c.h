@@ -80,19 +80,21 @@ typedef enum {
     MQTT_SERVER_TYPE_NUMBER
 }MQTT_SERVER_TYPE;
 
-
-
 typedef struct {
+    void (*module_ready)(void* arg);
+
     void (*msg_coming_cb)(MQTT_CLIENT_ID id,
                                        const char* topic,
                                        const char* payload,
                                        uint32_t payload_len,
                                        void* arg);
+
+    void (*connected)(MQTT_CLIENT_ID id, void* arg);
+
+    void (*disconnected)(MQTT_CLIENT_ID id, void* arg);
+
     void* arg;
 }sim_a7868c_mqtt_callback_t;
-
-#define MQTT_CLIENT_ID_0
-#define MQTT_CLIENT_ID_1
 
 int32_t sim_a7860c_start_mqtt_mode();  //Step 1
 
@@ -127,6 +129,10 @@ int32_t sim_a7860c_mqtt_publish(MQTT_CLIENT_ID _client_id,
                                 uint32_t _timeout);
 
 int32_t sim_a7860c_mqtt_polling();
+
+/*************************************** MQTTS COMMANDS ************************************/
+
+
 
 #ifdef __cplusplus
 }

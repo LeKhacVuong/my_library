@@ -10,7 +10,7 @@
 #include "v_timer.h"
 #include "v_unix_serial.h"
 
-#define TAG "gps"
+#define TAG "exam_lte"
 
 #define TEST_HOST   "test.mosquitto.org"
 #define TEST_PORT   1883
