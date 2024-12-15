@@ -281,9 +281,9 @@ int32_t v_link_list_sort_asc(v_link_list_t* _this, v_link_list_cmp_fn_t _cmp_fn)
     }
 
     for(int i = max_node; i >= 0; i--){
+        link_node_t* node_last  = v_link_list_get_link_node(this, i);
         for(int j = 0; j <= i; j++){
             link_node_t* node_first = v_link_list_get_link_node(this, j);
-            link_node_t* node_last  = v_link_list_get_link_node(this, i);
             if(_cmp_fn(node_first->value, node_last->value) > 0){
                 swap_link_node(node_first, node_last, this->item_size);
             }
@@ -304,9 +304,9 @@ int32_t v_link_list_sort_desc(v_link_list_t* _this, v_link_list_cmp_fn_t _cmp_fn
     }
 
     for(int i = max_node; i >= 0; i--){
+        link_node_t* node_last  = v_link_list_get_link_node(this, i);
         for(int j = 0; j <= i; j++){
             link_node_t* node_first = v_link_list_get_link_node(this, j);
-            link_node_t* node_last  = v_link_list_get_link_node(this, i);
             if(_cmp_fn(node_first->value, node_last->value) < 0){
                 swap_link_node(node_first, node_last, this->item_size);
             }
