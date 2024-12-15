@@ -19,6 +19,8 @@ set(C_UTILS_SRC
         containers/sm_queue.h
         containers/sm_stack.c
         containers/sm_stack.h
+        containers/v_link_list.c
+        containers/v_link_list.h
 
         timing/elapsed_timer.h
         timing/TimeUtils.h

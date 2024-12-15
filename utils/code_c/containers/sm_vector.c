@@ -67,7 +67,7 @@ void* sm_vector_get_item(sm_vector_t* _vector, uint32_t _index)
     return ptr;
 }
 
-int32_t sm_vector_coppy_front(sm_vector_t* _vector, void* _buff)
+int32_t sm_vector_copy_front(sm_vector_t* _vector, void* _buff)
 {
     if (_vector == NULL) return -1;
     if (_buff == NULL) return -1;
@@ -77,7 +77,7 @@ int32_t sm_vector_coppy_front(sm_vector_t* _vector, void* _buff)
     return 0;
 }
 
-int32_t sm_vector_coppy_last(sm_vector_t* _vector, void* _buff)
+int32_t sm_vector_copy_last(sm_vector_t* _vector, void* _buff)
 {
     if (_vector == NULL) return -1;
     if (_buff == NULL) return -1;

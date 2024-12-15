@@ -32,11 +32,9 @@ int32_t sm_vector_get_size(sm_vector_t *_vector);
 
 bool sm_vector_is_full(sm_vector_t *_vector);
 
-int32_t sm_vector_copy_item(sm_vector_t *_vector, uint32_t _index, void *_buff);
+int32_t sm_vector_copy_front(sm_vector_t *_vector, void *_buff);
 
-int32_t sm_vector_coppy_front(sm_vector_t *_vector, void *_buff);
-
-int32_t sm_vector_coppy_last(sm_vector_t *_vector, void *_buff);
+int32_t sm_vector_copy_last(sm_vector_t *_vector, void *_buff);
 
 int32_t sm_vector_erase_item_by_index(sm_vector_t *_vector, uint32_t _index);
 

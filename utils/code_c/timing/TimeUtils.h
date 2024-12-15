@@ -28,9 +28,6 @@ static inline void delayMs(int32_t _ms){
     while (timeout > getTickCount());
 }
 
-static inline int64_t get_tick_count(){
-    return getTickCount();
-}
 
 #ifdef __cplusplus
 };

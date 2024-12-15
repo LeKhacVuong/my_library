@@ -59,3 +59,6 @@ add_subdirectory(platform/linux/tcp/tcp_client)
 add_subdirectory(platform/linux/tcp/tcp_server)
 add_subdirectory(platform/linux/serial)
 add_subdirectory(platform/linux/timer)
+
+add_executable(main main_test.c)
+target_link_libraries(main c_utils)
