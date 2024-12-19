@@ -18,10 +18,19 @@ struct MemoryStruct {
     char *memory;
     size_t size;
 };
+CURL *curl_handle;
 
 static size_t
 WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
 {
+
+    char *ct;
+    /* ask for the content-type */
+    int res = curl_easy_getinfo(curl_handle, CURLINFO_CONTENT_TYPE, &ct);
+
+    if((CURLE_OK == res) && ct)
+        printf("We received Content-Type: %s\n", ct);
+
     size_t realsize = size * nmemb;
     struct MemoryStruct *mem = (struct MemoryStruct *)userp;
 
@@ -42,7 +51,6 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
 
 int main(void)
 {
-    CURL *curl_handle;
     CURLcode res;
 
     struct MemoryStruct chunk;
@@ -63,6 +71,12 @@ int main(void)
 
     /* we pass our 'chunk' struct to the callback function */
     curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
+
+    char buff_range[20] = "0-15";
+
+    curl_easy_setopt(curl_handle, CURLOPT_RANGE, buff_range);
+
+    memset(buff_range, 0, 20);
 
     /* get it! */
     res = curl_easy_perform(curl_handle);

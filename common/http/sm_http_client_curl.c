@@ -46,8 +46,11 @@ sm_http_client_t* sm_http_client_create(void* _net){
 }
 
 int32_t sm_http_client_free(sm_http_client_t* _this){
+    if(!_this){
+        return -1;
+    }
 
-
+    curl_global_cleanup();
 
     return 0;
 }
@@ -81,9 +84,12 @@ int32_t sm_http_client_set_range_header(sm_http_client_t* _this, uint32_t _start
     if(!_this){
         return -1;
     }
+    sm_http_curl_t* this = _this;
 
+    char range[128] = {0,};
+    sprintf(range, "%d-%d", _start, _start + _length - 1);
 
-
+    curl_easy_setopt(this->m_curl, CURLOPT_RANGE, range);
     return 0;
 }
 
@@ -95,8 +101,6 @@ int32_t sm_http_client_set_url(sm_http_client_t* _this, const char* _url){
 
     curl_easy_setopt(this->m_curl, CURLOPT_URL, "https://example.com");
 
-
-
     return 0;
 }
 
@@ -107,6 +111,8 @@ int32_t sm_http_client_get_method(sm_http_client_t* _this,
     if(!_this){
         return -1;
     }
+
+
     int result = 0;
 
 
