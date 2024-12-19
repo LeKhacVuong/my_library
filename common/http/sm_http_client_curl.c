@@ -12,7 +12,7 @@
 #define _impl(x)    ((sm_http_curl_t*)(x))
 
 typedef struct{
-    CURL* m_handle;
+    CURL* m_curl;
     struct curl_slist* m_headers;
 
     sm_http_client_response_fn_t m_response;
@@ -20,7 +20,7 @@ typedef struct{
 }sm_http_curl_t;
 
 static sm_http_curl_t g_http_client = {
-        .m_handle = NULL,
+        .m_curl = NULL,
         .m_headers = NULL,
         .m_response = NULL,
         .m_arg = NULL
@@ -36,8 +36,8 @@ sm_http_client_t* sm_http_client_create(void* _net){
     (void)_net;
 
     curl_global_init(CURL_GLOBAL_DEFAULT);
-    g_http_client.m_handle = curl_easy_init();
-    if(!g_http_client.m_handle){
+    g_http_client.m_curl = curl_easy_init();
+    if(!g_http_client.m_curl){
         LOG_ERR(TAG, "CURL handle NULL");
         return NULL;
     }
@@ -47,6 +47,8 @@ sm_http_client_t* sm_http_client_create(void* _net){
 
 int32_t sm_http_client_free(sm_http_client_t* _this){
 
+
+
     return 0;
 }
 
@@ -55,6 +57,8 @@ int32_t sm_http_client_add_header_default(sm_http_client_t* _this){
         return -1;
     }
 
+
+
     return 0;
 }
 
@@ -62,6 +66,8 @@ int32_t sm_http_client_add_header(sm_http_client_t* _this, const char* _type, co
     if(!_this || !_type || !_content){
         return -1;
     }
+
+
 
 
     return 0;
@@ -76,6 +82,8 @@ int32_t sm_http_client_set_range_header(sm_http_client_t* _this, uint32_t _start
         return -1;
     }
 
+
+
     return 0;
 }
 
@@ -83,6 +91,11 @@ int32_t sm_http_client_set_url(sm_http_client_t* _this, const char* _url){
     if(!_this || !_url){
         return -1;
     }
+    sm_http_curl_t* this = _this;
+
+    curl_easy_setopt(this->m_curl, CURLOPT_URL, "https://example.com");
+
+
 
     return 0;
 }
@@ -94,7 +107,9 @@ int32_t sm_http_client_get_method(sm_http_client_t* _this,
     if(!_this){
         return -1;
     }
-    int result = -1;
+    int result = 0;
+
+
 
 
     return result;
@@ -105,5 +120,8 @@ int32_t sm_http_client_post_method(sm_http_client_t* _this,
                                    const char* _request_payload,
                                    sm_http_client_response_fn_t _cb,
                                    void* _arg){
+
+
+
     return -1;
 }

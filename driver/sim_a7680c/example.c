@@ -2,6 +2,8 @@
 // Created by vuonglk on 29/11/2024.
 //
 
+#include "sm_crc.h"
+
 #include <unistd.h>
 #include <string.h>
 #include "sim_a7680c.h"
@@ -14,6 +16,31 @@
 
 #define TEST_HOST   "test.mosquitto.org"
 #define TEST_PORT   1883
+
+bool get_signal(){
+    return get_tick_count()%2;
+}
+
+void read_signal_period_callback(uint32_t _period){
+    ///TODO lam gi thi lam
+}
+
+uint32_t signal_counter = 0;
+
+void my_timer_1us_callback(void* arg){    // ngat timer 1 us (us la micro giay nhe!!)
+    bool signal = get_signal();
+    if(signal){
+        signal_counter++;
+
+    } else{
+        if(signal_counter == 0){
+            return;
+        }
+        read_signal_period_callback(signal_counter); // chu ky tinh theo us
+        signal_counter = 0;
+    }
+}
+
 
 
 void my_timer_1ms_callback(void* arg){
@@ -33,16 +60,31 @@ int main(){
     sm_logger_init(0, LOG_LEVEL_INFO);
     LOG_INF(TAG, "Start app test gps");
 
+    uint8_t test[1024];
+    memset(test, 0xA5, 1024);
+
+    test[0] = 1;
+    test[1] = 2;
+    test[2] = 3;
+
+    uint16_t crc = sm_CRC_CalculateCRC16(test, 4);
+
+
+    while(1);
+
     v_timer_t* timer = v_timer_create(1000, my_timer_1ms_callback, 0);
 
     v_serial_t* serial = unix_serial_create(UNIX_COM_0, 115200, UNIX_SERIAL_MODE_NONE_BLOCKING);
+
+
 
     if(!serial){
         LOG_ERR(TAG, "Open port FAILED");
         return -1;
     }
 
-    sim_a7680c_create_default(serial);    sleep(1);
+    sim_a7680c_create_default(serial);
+    sleep(1);
 
     char buffer[512] = {0, };
 

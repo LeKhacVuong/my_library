@@ -64,26 +64,14 @@ int32_t sm_http_client_set_range_header(sm_http_client_t* _this, uint32_t _start
 
  int32_t sm_http_client_set_url(sm_http_client_t* _this, const char* _url);
 
-/**
- *
- * @param _this
- * @param _url
- * @param _response_header
- * @param _payload
- * @return HTTP_STATUS_CODE
- */
+
+ /*====================================== METHODS ====================================*/
+
 int32_t sm_http_client_get_method(sm_http_client_t* _this,
                                   const char* _url,
                                   sm_http_client_response_fn_t _cb,
                                   void* _arg);
 
-/**
- *
- * @param _this
- * @param _url
- * @param _header
- * @return HTTP_STATUS_CODE
- */
 int32_t sm_http_client_post_method(sm_http_client_t* _this,
                                    const char* _url,
                                    const char* _request_payload,
