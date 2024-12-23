@@ -4,7 +4,7 @@
 
 char* g_url = "http://s3.ap-southeast-1.amazonaws.com/selex-bss-v2-log/ota_bss%2FBMS_V1.0.17.rc05%20.hex";
 
-char* g_git_link = "https://raw.githubusercontent.com/LeKhacVuong/http_file_storage/refs/heads/master/self_info.txt";
+char* g_git_link = "https://raw.githubusercontent.com/LeKhacVuong/http_file_storage/refs/heads/master/test_file.txt";
 
 /*=====================================================================================================*/
 
@@ -71,12 +71,6 @@ int main(void)
 
     /* we pass our 'chunk' struct to the callback function */
     curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
-
-    char buff_range[20] = "0-15";
-
-    curl_easy_setopt(curl_handle, CURLOPT_RANGE, buff_range);
-
-    memset(buff_range, 0, 20);
 
     /* get it! */
     res = curl_easy_perform(curl_handle);

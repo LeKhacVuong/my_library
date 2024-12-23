@@ -59,19 +59,7 @@ int main(){
 
     sm_logger_init(0, LOG_LEVEL_INFO);
     LOG_INF(TAG, "Start app test gps");
-
-    uint8_t test[1024];
-    memset(test, 0xA5, 1024);
-
-    test[0] = 1;
-    test[1] = 2;
-    test[2] = 3;
-
-    uint16_t crc = sm_CRC_CalculateCRC16(test, 4);
-
-
-    while(1);
-
+    
     v_timer_t* timer = v_timer_create(1000, my_timer_1ms_callback, 0);
 
     v_serial_t* serial = unix_serial_create(UNIX_COM_0, 115200, UNIX_SERIAL_MODE_NONE_BLOCKING);

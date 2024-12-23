@@ -8,6 +8,7 @@
 #include "v_modem.h"
 #include "sm_logger.h"
 #include "elapsed_timer.h"
+#include "TimeUtils.h"
 
 #include "v_math.h"
 
@@ -62,20 +63,15 @@ static int32_t sim_a7860c_send_cmd(sim_a7680c_driver_impl_t* this, const char* _
     return ret;
 }
 
-static int32_t sim_a7860c_set_value(sim_a7680c_driver_impl_t* this,
-                                    const char* _key,
-                                    DATA_TYPE _type,
-                                    const char* _value,
-                                    uint32_t _timeout){
+static int32_t sim_a7860c_set_value_res_ok(sim_a7680c_driver_impl_t* this,
+                                           const char* _key,
+                                           const char* _value,
+                                           uint32_t _timeout){
     int32_t ret = -1;
 
     char buff[LTE_BUFFER_LENGTH] = {0,};
 
-    if(_type == DATA_STRING){
-        snprintf(buff, LTE_BUFFER_LENGTH, "AT+%s=\"%s\"\r\n", _key, _value);
-    }else if(_type == DATA_RAW){
-        snprintf(buff, LTE_BUFFER_LENGTH, "AT+%s=%s\r\n", _key, _value);
-    }
+    snprintf(buff, LTE_BUFFER_LENGTH, "AT+%s=%s\r\n", _key, _value);
 
     ret = modem_send_cmd(this->m_modem, buff, OK_RES, ERROR_RES, _timeout);
     if(ret < 0){
@@ -83,15 +79,32 @@ static int32_t sim_a7860c_set_value(sim_a7680c_driver_impl_t* this,
         return -1;
     }
 
-    if(_type == DATA_STRING){
-        LOG_INF(TAG, "Set sim key \"%s\" to \"%s\" SUCCEED",_key, _value);
-    }else if(_type == DATA_RAW){
-        LOG_INF(TAG, "Set sim key \"%s\" to %s SUCCEED",_key, _value);
-    }
+    LOG_INF(TAG, "Set sim key \"%s\" to %s SUCCEED",_key, _value);
 
     return ret;
 }
 
+static const char* sim_a7860c_set_value_res_echo(sim_a7680c_driver_impl_t* this,
+                                               const char* _key,
+                                               const char* _value,
+                                               uint32_t _timeout){
+
+    int32_t ret = -1;
+
+    char buff[LTE_BUFFER_LENGTH] = {0,};
+
+    snprintf(buff, LTE_BUFFER_LENGTH, "AT+%s=%s\r\n", _key, _value);
+
+    ret = modem_send_cmd(this->m_modem, buff, _key, ERROR_RES, _timeout);
+    if(ret < 0){
+        LOG_ERR(TAG, "Set sim key \"%s\" FAILED",_key);
+        return NULL;
+    }
+    LOG_INF(TAG, "Set sim key \"%s\" to %s SUCCEED", _key, _value);
+    char* modem_buff = modem_get_buff(this->m_modem);
+    char *p_res = strrchr(modem_buff, '+');
+    return p_res;
+}
 
 static int32_t sim_a7860c_get_value(sim_a7680c_driver_impl_t* this,
                                     const char* _key,
@@ -243,9 +256,9 @@ int32_t sim_a7680_tcp_set_rx_mode(TCP_RX_MODE _mode){
     }
 
     if(_mode == TCP_RX_AUTO){
-        return sim_a7860c_set_value(this, "CIPRXGET", DATA_RAW, "1", 1000);
+        return sim_a7860c_set_value_res_ok(this, "CIPRXGET", "1", 1000);
     }else{
-        return sim_a7860c_set_value(this, "CIPRXGET", DATA_RAW, "0", 1000);
+        return sim_a7860c_set_value_res_ok(this, "CIPRXGET", "0", 1000);
     }
 }
 
@@ -263,7 +276,7 @@ int32_t sim_a7680_tcp_open(uint8_t _tcp_link_id, const char* _host, uint32_t _po
     char value[LTE_BUFFER_LENGTH] = {0,};
     snprintf(value, LTE_BUFFER_LENGTH, "%d,\"TCP\",\"%s\",%d", _tcp_link_id, _host, _port);
 
-    return sim_a7860c_set_value(this, "CIPOPEN", DATA_RAW, value, 1000);
+    return sim_a7860c_set_value_res_ok(this, "CIPOPEN", value, 1000);
 }
 
 int32_t sim_a7680_tcp_close(uint8_t _tcp_link_id){
@@ -279,7 +292,7 @@ int32_t sim_a7680_tcp_close(uint8_t _tcp_link_id){
 
     char value[LTE_BUFFER_LENGTH] = {0,};
     snprintf(value, LTE_BUFFER_LENGTH, "%d", _tcp_link_id);
-    return sim_a7860c_set_value(this, "CIPCLOSE", DATA_RAW, value, 1000);
+    return sim_a7860c_set_value_res_ok(this, "CIPCLOSE", value, 1000);
 }
 
 /*************************************** MQTT COMMANDS ************************************/
@@ -290,11 +303,10 @@ typedef enum{
     RES_TYPE_NUMBER
 }MQTT_CMD_RES_TYPE;
 
-static int32_t sim_a7860c_set_mqtt_value(MQTT_CMD_RES_TYPE _res_type,
-                                         MQTT_CLIENT_ID _client_id,
-                                         const char* _key,
-                                         const char* _value,
-                                         uint32_t _timeout){
+static int32_t sim_a7860c_set_mqtt_value_echo_res(MQTT_CLIENT_ID _client_id,
+                                                  const char* _key,
+                                                  const char* _value,
+                                                  uint32_t _timeout){
     sim_a7680c_driver_impl_t* this = &g_instance;
 
     int32_t ret = -1;
@@ -302,29 +314,18 @@ static int32_t sim_a7860c_set_mqtt_value(MQTT_CMD_RES_TYPE _res_type,
 
     snprintf(buff, LTE_BUFFER_LENGTH, "AT+%s=%s\r\n", _key, _value);
 
-    if(_res_type == RES_TYPE_OK) {
-        ret = modem_send_cmd(this->m_modem, buff, OK_RES, ERROR_RES, _timeout);
-        if(ret < 0){
-            LOG_ERR(TAG, "Client %d set key \"%s\" FAILED by not OK",_client_id, _key);
-            return -1;
-        }
-        LOG_INF(TAG, "Client %d set simply key \"%s\" SUCCEED to \"%s\"", _client_id, _key, _value);
-        return 0;
+    ret = modem_send_cmd(this->m_modem, buff, _key, ERROR_RES, _timeout);
+    if(ret < 0){
+        LOG_ERR(TAG, "Client %d set key \"%s\" FAILED by not echo",_client_id, _key);
+        return -1;
     }
-    else {
-        ret = modem_send_cmd(this->m_modem, buff, _key, ERROR_RES, _timeout);
-        if(ret < 0){
-            LOG_ERR(TAG, "Client %d set key \"%s\" FAILED by not echo",_client_id, _key);
-            return -1;
-        }
 
-        char *p_log = strrchr(modem_get_buff(this->m_modem), '+');
-        if(p_log){
-            p_log  = strsep(&p_log, "\r\n");
-        }
-        LOG_INF(TAG, "Client %d set simply key \"%s\" to \"%s\" - echo: %s ",_client_id, _key, _value, p_log?p_log:"___");
-        return 0;
+    char *p_log = strrchr(modem_get_buff(this->m_modem), '+');
+    if(p_log){
+        p_log  = strsep(&p_log, "\r\n");
     }
+    LOG_INF(TAG, "Client %d set simply key \"%s\" to \"%s\" - echo: %s ",_client_id, _key, _value, p_log?p_log:"___");
+    return 0;
 }
 
 static int32_t sim_a7860c_set_mqtt_value_with_fill_header(MQTT_CMD_RES_TYPE _res_type,
@@ -405,7 +406,7 @@ int32_t sim_a7860c_mqtt_init_client(MQTT_CLIENT_ID _client_id, const char* _clie
     char value[LTE_BUFFER_LENGTH] = {0,};
     snprintf(value, LTE_BUFFER_LENGTH, "%d,\"%s\",%d", _client_id, _client_name, _server_type);
 
-    return sim_a7860c_set_value(this, "CMQTTACCQ", DATA_RAW, value, 1000);
+    return sim_a7860c_set_value_res_ok(this, "CMQTTACCQ", value, 1000);
 }
 
 int32_t sim_a7860c_mqtt_set_will_msg(MQTT_CLIENT_ID _client_id, const char* _topic, const char* _msg, uint8_t _qos){
@@ -461,7 +462,7 @@ int32_t sim_a7860c_mqtt_connect(MQTT_CLIENT_ID _client_id,
                  _info.clean_section);
     }
 
-    return sim_a7860c_set_mqtt_value(RES_TYPE_ECHO, _client_id, "CMQTTCONNECT", value, 15000);
+    return sim_a7860c_set_mqtt_value_echo_res(_client_id, "CMQTTCONNECT", value, 15000);
 }
 
 int32_t sim_a7860c_mqtt_check_connect(MQTT_CLIENT_ID _client_id){
@@ -486,7 +487,7 @@ int32_t sim_a7860c_mqtt_disconnect(MQTT_CLIENT_ID _client_id, uint32_t _timeout)
     }else{
         snprintf(value, LTE_BUFFER_LENGTH, "%d", _client_id);
     }
-    return sim_a7860c_set_mqtt_value(RES_TYPE_ECHO, _client_id, "CMQTTDISC", value, 5000);
+    return sim_a7860c_set_mqtt_value_echo_res(_client_id, "CMQTTDISC", value, 5000);
 }
 
 
@@ -516,8 +517,8 @@ int32_t sim_a7860c_mqtt_unsubscribe(MQTT_CLIENT_ID _client_id, const char* _topi
     sim_a7860c_set_mqtt_value_with_fill_header(RES_TYPE_OK, _client_id,
                                                       "CMQTTUNSUBTOPIC", value, _topic, 1000);
 
-    return sim_a7860c_set_mqtt_value(RES_TYPE_ECHO, _client_id,
-                                                      "CMQTTUNSUB", value, 5000);
+    return sim_a7860c_set_mqtt_value_echo_res(_client_id,
+                                              "CMQTTUNSUB", value, 5000);
 }
 
 
@@ -559,7 +560,7 @@ int32_t sim_a7860c_mqtt_publish(MQTT_CLIENT_ID _client_id,
     memset(value, 0, LTE_BUFFER_LENGTH);
     snprintf(value, LTE_BUFFER_LENGTH, "%d,%d,%d", _client_id, _qos, _timeout);
 
-    return sim_a7860c_set_mqtt_value(RES_TYPE_ECHO, _client_id, "CMQTTPUB", value, 5000);
+    return sim_a7860c_set_mqtt_value_echo_res(_client_id, "CMQTTPUB", value, 5000);
 }
 
 static int32_t parser_mqtt_subscribed_msg(sim_a7680c_driver_impl_t* this){
@@ -644,4 +645,70 @@ int32_t sim_a7860c_mqtt_polling(){
         }
     }
     return 0;
+}
+
+/*************************************** MQTT COMMANDS ************************************/
+
+int32_t sim_a786c_start_http_mode(){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    int ret = sim_a7860c_send_cmd(this, "HTTPINIT", 1000);
+    if(ret < 0){
+        return ret;
+    }
+    return sim_a7860c_set_value_res_ok(this, "HTTPPARA", "\"READMODE\",1", 1000);
+}
+
+int32_t sim_a786c_stop_http_mode(){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    return sim_a7860c_send_cmd(this, "HTTPTERM", 1000);
+}
+
+HTTP_CODE sim_a786c_http_download_full_content(const char* _url){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    if(!_url || !strlen(_url)){
+        return -1;
+    }
+    char value[LTE_BUFFER_LENGTH] = {0,};
+    snprintf(value, LTE_BUFFER_LENGTH, "\"URL\",\"%s\"", _url);
+
+    int ret = sim_a7860c_set_value_res_ok(this, "HTTPPARA", value, 5000);
+    if(ret < 0){
+        return -1;
+    }
+    delay(3);
+    const char* p_res = sim_a7860c_set_value_res_echo(this, "HTTPACTION", "0", 5000);
+    if(!p_res){
+        return -1;
+    }
+
+    int http_code = 0, content_size = 0;
+    if(sscanf(p_res, "+HTTPACTION: 0,%d,%d\r\n", &http_code, &content_size) != 2){
+        return -1;
+    }
+
+    LOG_INF(TAG, "Load content form %s with http code %d, content size %d", http_code, content_size);
+    return http_code;
+}
+
+HTTP_CODE sim_a786c_http_load_content(uint32_t _offset, uint32_t _size, char* _buff){
+    sim_a7680c_driver_impl_t* this = &g_instance;
+    char value[LTE_BUFFER_LENGTH] = {0,};
+    snprintf(value, LTE_BUFFER_LENGTH, "AT+HTTPREAD=%d,%d\r\n", _offset, _size);
+
+    int ret = modem_send_cmd(this->m_modem, value, "+HTTPREAD: 0\r\n", ERROR_RES, 3000);
+    if(ret < 0){
+        LOG_ERR(TAG, "Load content range failed");
+        return -1;
+    }
+    char *p_res = modem_get_buff(this->m_modem);
+    p_res = strsep(&p_res, "\r\n"); // "OK"
+    p_res = strsep(&p_res, "\r\n"); // an empty line
+    p_res = strsep(&p_res, "\r\n"); // HTTPREAD: <size>
+    p_res = strsep(&p_res, "\r\n"); // payload
+
+    LOG_INF(TAG, "Load content range %d - %d is: %s", _offset, _offset+_size, p_res);
+    if(_buff){
+        memcpy(_buff, p_res, v_min_off(strlen(p_res), _size));
+    }
+    return strlen(p_res);
 }

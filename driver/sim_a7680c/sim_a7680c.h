@@ -94,7 +94,7 @@ typedef struct {
 #define MQTT_CLIENT_ID_0
 #define MQTT_CLIENT_ID_1
 
-int32_t sim_a7860c_start_mqtt_mode();  //Step 1
+int32_t sim_a7860c_start_mqtt_mode();
 
 int32_t sim_a7860c_stop_mqtt_mode();
 
@@ -127,6 +127,18 @@ int32_t sim_a7860c_mqtt_publish(MQTT_CLIENT_ID _client_id,
                                 uint32_t _timeout);
 
 int32_t sim_a7860c_mqtt_polling();
+
+/*************************************** MQTT COMMANDS ************************************/
+
+#define HTTP_CODE int32_t
+
+int32_t sim_a786c_start_http_mode();
+
+int32_t sim_a786c_stop_http_mode();
+
+HTTP_CODE sim_a786c_http_download_full_content(const char* _url);
+
+HTTP_CODE sim_a786c_http_load_content(uint32_t _offset, uint32_t _size, char* _buff);
 
 #ifdef __cplusplus
 }

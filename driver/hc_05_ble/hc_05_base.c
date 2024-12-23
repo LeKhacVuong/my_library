@@ -68,7 +68,7 @@ static int32_t hc_05_set_value(hc_05_impl_t* this, const char* _key, const char*
     LOG_INF(TAG, "Set HC 05 key \"%s\" to \"%s\" SUCCEED",_key, _value?_value:"_");
 
     EXIT:
-    hc_05_start_config(this);
+    hc_05_stop_config(this);
     return ret;
 }
 
@@ -93,7 +93,7 @@ static int32_t hc_05_get_value(hc_05_impl_t* this, const char* _key, char* _buff
     LOG_INF(TAG, "HC 05 key \"%s\" is: %s", _key, value);
 
     EXIT:
-    hc_05_start_config(this);
+    hc_05_stop_config(this);
     return ret;
 }
 
@@ -141,14 +141,7 @@ static int32_t hc_05_set_addr(hc_05_proc_t* _this, const char* _data){
         return -1;
     }
     int32_t ret = -1;
-    hc_05_start_config(this);
 
-
-
-
-
-    EXIT:
-    hc_05_start_config(this);
     return ret;
 }
 
@@ -158,12 +151,7 @@ static int32_t hc_05_get_addr(hc_05_proc_t* _this, char* _buff, uint32_t _len){
         return -1;
     }
     int32_t ret = -1;
-    hc_05_start_config(this);
 
-
-
-    EXIT:
-    hc_05_start_config(this);
     return ret;
 }
 

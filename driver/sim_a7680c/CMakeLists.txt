@@ -10,7 +10,9 @@ add_library(sim_a7680c STATIC
 
 target_link_libraries(sim_a7680c modem)
 
-add_executable(test_sim example.c)
-
+add_executable(test_sim mqtt_example.c)
 target_link_libraries(test_sim sim_a7680c unix_timer unix_serial)
 
+
+add_executable(test_http http_example.c)
+target_link_libraries(test_http sim_a7680c unix_timer unix_serial)
