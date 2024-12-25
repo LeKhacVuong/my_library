@@ -1,5 +1,5 @@
 //
-// Created by vnbk on 18/09/2024.
+// Created by vuonglk
 //
 #include <curl/curl.h>
 #include <string.h>
@@ -71,8 +71,6 @@ int32_t sm_http_client_add_header(sm_http_client_t* _this, const char* _type, co
     }
 
 
-
-
     return 0;
 }
 
@@ -88,7 +86,6 @@ int32_t sm_http_client_set_range_header(sm_http_client_t* _this, uint32_t _start
 
     char range[128] = {0,};
     sprintf(range, "%d-%d", _start, _start + _length - 1);
-
     curl_easy_setopt(this->m_curl, CURLOPT_RANGE, range);
     return 0;
 }
@@ -99,7 +96,7 @@ int32_t sm_http_client_set_url(sm_http_client_t* _this, const char* _url){
     }
     sm_http_curl_t* this = _this;
 
-    curl_easy_setopt(this->m_curl, CURLOPT_URL, "https://example.com");
+    curl_easy_setopt(this->m_curl, CURLOPT_URL, _url);
 
     return 0;
 }
@@ -111,8 +108,6 @@ int32_t sm_http_client_get_method(sm_http_client_t* _this,
     if(!_this){
         return -1;
     }
-
-
     int result = 0;
 
 

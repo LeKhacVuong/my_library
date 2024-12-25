@@ -69,7 +69,7 @@ int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok,
         LOG_ERR(TAG, "Send cmd FAILED");
         return -1;
     }
-
+//    LOG_INF(TAG, "Send modem cmd %s", _cmd);
     elapsed_timer_t wait_timeout;
     elapsed_timer_resetz(&wait_timeout, _timeout);
     memset(this->m_buff, 0, this->m_buff_len);
@@ -85,11 +85,11 @@ int32_t modem_send_cmd(v_modem_t* _modem, const char* _cmd, const char* _res_ok,
             }
             if(this->m_buff[cur_len-1] == '\n'){
                 if(strstr(this->m_buff, _res_ok) != NULL){
-//                LOG_INF(TAG, "Cmd %s ret SUCCEED", _cmd);
+//                LOG_INF(TAG, "Cmd %s ret SUCCEED: >>|| %s ||<<", _cmd, this->m_buff);
                     return 0;
                 }
                 if(strstr(this->m_buff, _res_fail) != NULL) {
-                    LOG_INF(TAG, "Cmd %s ret FAILED", _cmd);
+                    LOG_WRN(TAG, "Cmd %s ret FAILED: >>|| %s ||<<", _cmd, this->m_buff);
                     return -2;
                 }
             }

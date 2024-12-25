@@ -34,7 +34,6 @@ int main(){
 
     v_serial_t* serial = unix_serial_create(UNIX_COM_0, 115200, UNIX_SERIAL_MODE_NONE_BLOCKING);
 
-
     if(!serial){
         LOG_ERR(TAG, "Open port FAILED");
         return -1;
@@ -53,10 +52,10 @@ int main(){
     LOG_INF(TAG, "Done reset module sim");
 
     sim_a786c_start_http_mode();
-    sleep(5);
+
     sim_a786c_http_download_full_content(g_git_link);
-    sleep(5);
-    sim_a786c_http_load_content(0, 50, NULL);
+
+    sim_a786c_http_load_content(250, 500, NULL);
     while (1){
 
     }
