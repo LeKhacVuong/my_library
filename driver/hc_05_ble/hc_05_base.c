@@ -83,7 +83,7 @@ static int32_t hc_05_get_value(hc_05_impl_t* this, const char* _key, char* _buff
 
     char value[HC_05_BUFF_LEN] = {0,};
     ret = sscanf(modem_get_buff(this->m_modem), "+NAME:%s\r\n", value);
-    memcpy(_buff, value, _max_len);
+    memcpy(_buff, value, v_min_off(_max_len, strlen(value));
     LOG_INF(TAG, "HC 05 key \"%s\" is: %s", _key, value);
 
     EXIT:
