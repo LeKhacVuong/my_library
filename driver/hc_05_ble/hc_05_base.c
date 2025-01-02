@@ -21,12 +21,6 @@ typedef struct {
     void* m_arg;
 }hc_05_impl_t;
 
-#define GET_NAME    "AT+NAME?\r\n"
-#define SET_NAME    "AT+NAME=%s\r\n"
-
-#define GET_ROLE    "AT+ROLE?\r\n"
-#define SET_ROLE    "AT+ROLE=%d\r\n"
-
 #define OK_RES     "OK\r\n"
 #define ERROR_RES        "ERROR:\r\n"
 
