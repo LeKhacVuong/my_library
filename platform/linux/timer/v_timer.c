@@ -103,9 +103,9 @@ int32_t v_timer_single_shot(uint32_t _interval_ms, v_timer_callback _cb, void* _
 
     div_t sec = div(_interval_ms, 1000);
 
-    spec.it_value.tv_sec = sec.quot;  // Timer 1 sẽ hết thời gian sau 2 giây
+    spec.it_value.tv_sec = sec.quot;
     spec.it_value.tv_nsec = sec.rem*1000*1000;
-    spec.it_interval.tv_sec = 0;  // Timer chỉ chạy một lần
+    spec.it_interval.tv_sec = 0;
     spec.it_interval.tv_nsec = 0;
 
     if (timer_settime(this->m_timer, 0, &spec, NULL) == -1) {
